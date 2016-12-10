@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <title>Курсове - Телерик Академия - Студентска система</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" />
+    <meta name="keywords" content="Telerik Academy, Академия на Телерик" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="revisit-After" content="1 day" />
+    <meta name="rating" content="general" />
+    <meta name="author" content="Telerik Academy" />
+    <meta name="generator" content="Telerik Academy Learning System 5.7 (build 20160514.1dfa2d3" />
+    <link rel="shortcut icon" href="/Content/Images/favicon.ico" />
+    <link rel="apple-touch-icon" href="/Content/Images/apple-touch-icon.png" />
+    <link rel="alternate" type="application/rss+xml" href="/Rss/LatestCourses" title="Най-новите курсове в Академията на Телерик"
+    />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="/Content/kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="/Content/kendo/kendo.metro.min.css" rel="stylesheet" />
+    <link href="/Content/kendo/kendo.black.prefixed.css" rel="stylesheet" />
+    <link href="/Content/kendo/kendo.default.prefixed.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/Global.css" rel="stylesheet" />
+    <link href="/Content/sweet-alert.css" rel="stylesheet" />
+
+    <link href="/Content/Courses/Courses.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="/Content/logged-in.css" />
+
+    <noscript>
+        <link href="/Content/NoJavascript.css" rel="stylesheet" type="text/css" />
+    </noscript>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write(decodeURI('%3Cscript src="/Scripts/jquery-2.1.4.min.js"%3E%3C/script%3E'))</script>
+    <script src="/Scripts/jszip.js"></script>
+    <script src="/Scripts/kendo/kendo.all.js"></script>
+    <script src="/Scripts/kendo/kendo.aspnetmvc.js"></script>
+    <script src="/Scripts/kendo/cultures/kendo.culture.en-GB.js"></script>
+    <script src="/Scripts/jquery.timeago.js"></script>
+    <script src="/Scripts/jquery.timeago.bg.js"></script>
+    <script src="/Scripts/sweet-alert.min.js"></script>
+    <script src="/Scripts/TILS/global.js"></script>
+    <script src="/Scripts/TILS/search.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+
+    <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="/Scripts/Courses/CourseDetails/courseDetails.js"></script>
+
+
+    <script src="/Scripts/jquery.timeago.js"></script>
+    <script src="/Scripts/jquery.timeago.bg.js"></script>
+    <script src="/Scripts/TILS/layout-logged-in.js"></script>
+
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+        }(window,
+        document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '501393893391884');
+        fbq('track', "PageView");</script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=501393893391884&ev=PageView&noscript=1"
+        />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+</head>
+
+
+
+<body>
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-MJH9PN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MJH9PN');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script>
+        $(function () {
+            var $items = $('.CategoryTitle');
+            console.log($items.length);
+            $('.CategoryTitle').on('click', function (e) {
+                var $parent = $(this).parents(".CategoryItem");
+                $(".CategoryItem.current").removeClass("current");
+                $parent.addClass("current");
+                e.preventDefault();
+                return false;
+            });
+
+            $(".MenuItem").on("click", function (e) {
+                if ($(this).hasClass("TelerikAcademyLogo")) {
+                    return;
+                }
+
+                var $parent = $(this).parents("li");
+
+                var hasHover = $parent.hasClass("hover");
+                var $list = $parent.find("> ul");
+
+                $(".hover").find("ul")
+                    .animate({
+                        height: 0
+                    }, 200, function () {
+                        $(".hover > ul")
+                                .css("height", "")
+                        $(".hover")
+                                .removeClass("hover");
+                    });
+
+                //$('.hover').removeClass("hover");
+
+                if (!hasHover) {
+                    //$parent.addClass("hover");
+
+                    $list.css("opacity", 0)
+                        .css("display", "block");
+
+                    var h = $list.css("height");
+                    console.log(h);
+
+                    $list.css("height", 0)
+                        .css("opacity", 1);
+
+                    $list.animate({
+                        height: h
+                    }, 500, function () {
+                        $list.css("height", "")
+                            .css("display", "");
+                        $parent.addClass("hover");
+                    });
+                }
+                e.preventDefault();
+                return false;
+            });
+        });
+    </script>
+    <div id="root">
+        <header id="MainHeader" class="text-center">
+            <nav id="MainNavMobile" class="navbar navbar-default text-center">
+                <div class="container-fluid">
+                    <div class="navbar-header text-center">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="text-center">
+                            <a class="navbar-brand" href="/">
+                                <img src="/Content/Images/Logos/telerik-academy-logo.png" alt="Alternate Text" />
+
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav text-left">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Академия<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/SoftwareAcademy/Candidate">Кандидатстване</a></li>
+                                    <li><a href="/SoftwareAcademy/Candidate/ExamDateSelect">Входен изпит</a></li>
+                                    <li><a href="/Courses/CourseTracks/List">Специалности</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown hasSubdropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Курсове и инициативи<span class="caret"></span></a>
+                                <ul class="dropdown-menu big-dropdown-menu">
+                                    <li class="vertical-menu">
+                                        <ul>
+                                            <li>
+                                                <a href="/Courses/Courses/List" class="btn btn-success">Всички курсове</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://academy.telerik.com/academy/about" class="btn btn-success">Софтуерна Академия</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://www.telerik.com/telerik-digital-marketing-course" class="btn btn-success">Дигитална Академия</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://academy.telerik.com/school-academy/about" class="btn btn-success">Училищна академия</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://academy.telerik.com/algoacademy/home" class="btn btn-success">Алго Академия</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://telerik-kids.com/" class="btn btn-success">Детска Академия</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Основи на програмирането</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/323">Основи на C#</a></li>
+                                            <li><a href="/Courses/Courses/Details/331">C# за напреднали</a></li>
+                                            <li><a href="/Courses/Courses/Details/338">ООП със C#</a></li>
+                                            <li><a href="/Courses/Courses/Details/339">Основи на JavaScript</a></li>
+                                            <li><a href="/Courses/Courses/Details/245">ООП с JavaScript</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Уеб Front-end</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/324">Основи на HTML</a></li>
+                                            <li><a href="/Courses/Courses/Details/332">CSS стилизиране</a></li>
+                                            <li><a href="/Courses/Courses/Details/344">JavaScript UI и DOM</a></li>
+                                            <li><a href="/Courses/Courses/Details/262">UX дизайн</a></li>
+                                            <li><a href="/Courses/Courses/Details/292">Основи на Photoshop</a></li>
+                                            <li><a href="/Courses/Courses/Details/294">Изграждане на <br class="hidden-sm hidden-xs" />Уеб front-end</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Програмиране за напреднали</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/345">Компонентно тестване<br class="hidden-sm hidden-xs" /> със C#</a></li>
+                                            <li><a href="/Courses/Courses/Details/244">Качествен програмен<br class="hidden-sm hidden-xs" /> код със C#</a></li>
+                                            <li><a href="/Courses/Courses/Details/272">Структури от данни<br class="hidden-sm hidden-xs" /> и алгоритми</a></li>
+                                            <li><a href="/Courses/Courses/Details/257">Бази от данни и SQL</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Уеб технологии</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/254">Приложения с JavaScript</a></li>
+                                            <li><a href="/Courses/Courses/Details/275">Уеб услуги и<br class="hidden-sm hidden-xs" /> облачни технологии</a></li>
+                                            <li><a href="/Courses/Courses/Details/305">Уеб приложения<br class="hidden-sm hidden-xs" /> с Node.js</a></li>
+                                            <li><a href="/Courses/Courses/Details/299">SPA приложения<br class="hidden-sm hidden-xs" /> с AngularJS</a></li>
+                                            <li><a href="/Courses/Courses/Details/310">ASP.NET Web Forms</a></li>
+                                            <li><a href="/Courses/Courses/Details/313">ASP.NET MVC</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Мобилни технологии</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/300">Приложения за Windows</a></li>
+                                            <li><a href="/Courses/Courses/Details/306">Мобилни приложения<br class="hidden-sm hidden-xs" /> за Android</a></li>
+                                            <li><a href="/Courses/Courses/Details/311">Приложения за <br class="hidden-sm hidden-xs" />iPhone и iPad</a></li>
+                                            <li><a href="/Courses/Courses/Details/316">Мултиплатформени <br class="hidden-sm hidden-xs" />мобилни приложения с <br class="hidden-sm hidden-xs" />NativeScript</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Осигуряване на Качеството</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/290">Осигуряване на <br class="hidden-sm hidden-xs" /> качеството<br class="hidden-sm hidden-xs" /> част 1</a></li>
+                                            <li><a href="/Courses/Courses/Details/301">Осигуряване на <br class="hidden-sm hidden-xs" /> качеството<br class="hidden-sm hidden-xs" /> част 2</a></li>
+                                            <li><a href="/Courses/Courses/Details/308">Осигуряване на <br class="hidden-sm hidden-xs" /> качеството<br class="hidden-sm hidden-xs" /> част 3</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Форум<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/Forum/Home">Начало</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/Forum/Category/14/important-announcements">Важни съобщения</a></li>
+                                    <li><a href="/Forum/Category/10/telerik-software-academy">Софтуерна академия</a></li>
+                                    <li><a href="/Forum/Category/13/qa-academy">QA академия</a></li>
+                                    <li><a href="/Forum/Category/12/telerik-school-academy">Училищна академия</a></li>
+                                    <li><a href="/Forum/Category/3/algo-academy">Алго академия</a></li>
+                                    <li><a href="/Forum/Category/11/kids-academy-programirane-za-deca">Детска академия</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/Forum/Category/1/csharp-programming">C# програмиране</a></li>
+                                    <li><a href="/Forum/Category/2/front-end-development">Уеб Front-end програмиране</a></li>
+                                    <li><a href="/Forum/Category/8/web-development">Web Development</a></li>
+                                    <li><a href="/Forum/Category/9/mobile-development">Mobile Development</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/Forum/Category/5/events-and-competitions">Събития и конкурси</a></li>
+                                    <li><a href="/Forum/Category/6/external-courses">Външни курсове</a></li>
+                                    <li><a href="/Forum/Category/4/uncategorized">Други</a></li>
+                                    <li><a href="/Forum/Category/7/архив">Архив</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Помощ<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="http://telerikacademy.com/Files/22f12c2e-c836-4707-96c0-3ab0e3541a29.pdf">Условия и правила за участие в Академията на Телерик</a></li>
+                                    <li><a href="/FeedbackReport">Обратна връзка</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/Pages/1/Как%20да%20кандидатствате%20за%20Софтуерната%20академия%20на%20Телерик">Как се кандидатства за Софтуерната<br class="mobile" /> Академия?</a></li>
+                                    <li><a href="/Pages/2/Как%20да%20запишете%20онлайн%20курс%20в%20Студентската%20система%20на%20Телерик">Как да запиша онлайн курс в<br class="mobile" /> студентската система?</a></li>
+                                    <li><a href="/Pages/22/Как%20да%20изпратя%20домашно%20в%20студентската%20система%20на%20Telerik%20Academy?">Как да изпратя домашна работа в<br class="mobile" /> студентската система?</a></li>
+                                    <li><a href="/Pages/21/Как%20да%20запишем%20група%20за%20курса,%20който%20сме%20си%20избрали?">Как да запишем група за курса,<br class="mobile" />който сме си избрали?</a></li>
+                                    <li><a href="/Pages/20/Как%20да%20запишем%20тест%20или%20практически%20изпит?" class="k-link">Как да запишем тест <br class="mobile" />или практически изпит?</a></li>
+                                    <li><a href="/Pages/23/Как да кандидатствате за сертификат?">Как да кандидатстваме за сертификат?</a></li>
+                                    <li><a href="#">Как да кандидатстваме за сертификат?</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="http://academy.telerik.com/">Уебсайт на академията на Телерик</a></li>
+                                    <li><a href="http://bgcoder.com/">BGCoder Judge System</a></li>
+                                    <li><a href="https://github.com/TelerikAcademy/Common/raw/master/Telerik-Academy-TestSystem/Telerik-Academy-TestSystem.1.1.zip">Тестова система</a></li>
+                                    <li><a href="http://downloads.academy.telerik.com/svn/public/AntiCheatClient/Telerik-Academy-AntiCheat.zip">AntiCheat приложение</a></li>
+                                </ul>
+                            </li>
+
+
+
+
+
+                            <li class="dropdown">
+
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        StoikoNeykov<span class="caret"></span>
+                                    </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/Users/StoikoNeykov">Моят профил</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Courses/Courses/UserCourses">Моите курсове</a>
+                                    </li>
+                                    <li>
+                                        <a href="Users/Notifications/Index">Системни съобщения</a>
+                                    </li>
+                                    <li><a href="/Users/Calendar/Index">Календар</a></li>
+                                    <li><a href="/Friends">Приятели</a></li>
+                                    <li><a href="/Messages">Съобщения от потребители</a></li>
+                                    <li><a href="/Courses/Teamwork/List">Отборна работа</a></li>
+                                    <li><a href="/Courses/HomeworkEvaluations/Evaluate">Оцени домашно</a></li>
+                                    <li><a href="/Users/Profile/Settings">Настройки</a></li>
+                                    <li><a href="/Users/Auth/LogOut">Изход</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-search">
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+            <div class="search-controls hidden">
+                <form class="form-group form-inline" method="get" action="/Search/Results">
+                    <input type="text" name="search" placeholder="Търси в системата" autocomplete="off" />
+                    <button>
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </form>
+            </div>
+
+        </header>
+        <div id="MainContainer">
+            <div class="container" style="padding-top: 25px;">
+                <div>
+                    <p class="text-center">
+                        В момента има активно оценяване на изпита за курса "Бази данни (октомври 2016)".<br />Можете да оценявате
+                        решенията на вашите колеги на <a href="/Courses/PracticalExamEvaluations/Evaluate/388">този линк</a>.
+                    </p>
+                    <p class="text-center">
+                        В момента има активно оценяване на изпита за курса "Шаблони за дизайн (октомври 2016)".<br />Можете
+                        да оценявате решенията на вашите колеги на <a href="/Courses/PracticalExamEvaluations/Evaluate/389">този линк</a>.
+                    </p>
+                </div>
+            </div>
+            <section id="MainContent">
+
+
+                <h1 class="text-center">Курсове</h1>
+                <div class="container">
+                    <div class="row index-item">
+
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <h1>
+                                        Курс &quot;Single-page приложения с Angular 2&quot;
+
+                                        <a href="http://academy.telerik.com/about/licenses#public-change" title="Лиценз за промяна и споделяне на материали (с некомерсиална цел) "
+                                            target="_blank">
+                                            <img src="http://telerikacademy.com/Content/Images/CoursesLicenses/ShareAlike-License.png" alt="Course license" class="subscribeButton"
+                                            />
+                                        </a>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <a class="btn btn-success" href="/Courses/Courses/Details/391">Материалите за курса</a>
+
+                                    <a class="btn btn-success" href="/Courses/spa-applications-with-angular2">Предходни издания</a>
+                                </div>
+                            </div>
+
+                            <div class="text-center row">
+                                <div class="col-xs-12">
+                                    <p>
+                                        Курсът започва на <strong>2016-12-05</strong>
+                                        <span>, приключва на <strong>2017-01-04</strong></span> и има по <strong>5</strong>                                        лекции на седмица.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="text-center row">
+                                <div class="row">
+                                    <p>
+                                        <strong class="fontSize120">Участници: </strong>0 присъствено и 178 онлайн.
+                                    </p>
+                                    <div class="marginTop5" style="display:inline-block; vertical-align: bottom; ">
+                                        <strong class="fontSize120"><label for="ApplyDeadline">Срок за записване</label></strong>
+                                        <text>:</text>
+
+
+                                        <span>07 декември, 23:59ч.</span>
+
+
+
+                                        <span class="bold"><span class="badge bgDanger">срокът е изтекъл</span></span>
+                                    </div>
+                                </div>
+                                <div class="marginTop10 marginLeft20 marginRight20 descriptionContainer course391 row">
+                                    <div class="col-sm-offset-2 col-sm-8">
+                                        <p class="courseDescription">
+
+
+
+                                            На 7 декември в "Академията на Телерик" стартира първият в България безплатен курс по Angular 2 - най-новата технология&nbsp;за
+                                            създаване на front-end уеб приложения по лесен и бърз начин.&nbsp;Първата версия
+                                            на Angular 2 беше пусната публично през септември 2016 г. Angular 2 ви дава възможност
+                                            да използвате TypeScript - съвременен програмен език с отворен код, създаден
+                                            от Microsoft.<br />
+                                            <br...; </p>
+                                    </div>
+                                </div>
+
+                                <div class="marginTop10 text-center">
+                                    <div>
+                                        <div class="">
+                                            <div class="row">
+                                                <p class="col-sm-offset-2 col-sm-8 text-center">Срокът за записване е изтекъл</p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="text-center">
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+        (function () {
+            var courseId = 391;
+            var table = $('.course'+courseId).find('table');
+            table.wrap("<div class='scheduleTable'></div>");
+            table.show();
+
+            if (table.length != 0) {
+                $('#'+courseId).show();
+            }
+        })();
+    </script>
+                        </div>
+
+                    </div>
+                    <div class="row index-item">
+
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <h1>
+                                        Курс &quot;Училищна академия: Обектно-ориентирано проргамиране с TypeScript&quot;
+
+                                        <a href="http://academy.telerik.com/about/licenses#public-change" title="Лиценз за промяна и споделяне на материали (с некомерсиална цел) "
+                                            target="_blank">
+                                            <img src="http://telerikacademy.com/Content/Images/CoursesLicenses/ShareAlike-License.png" alt="Course license" class="subscribeButton"
+                                            />
+                                        </a>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <a class="btn btn-success" href="/Courses/Courses/Details/393">Материалите за курса</a>
+
+                                    <a class="btn btn-success" href="/Courses/typescript-oop">Предходни издания</a>
+                                </div>
+                            </div>
+
+                            <div class="text-center row">
+                                <div class="col-xs-12">
+                                    <p>
+                                        Курсът започва на <strong>2016-11-27</strong>
+                                        <span>, приключва на <strong>2016-11-29</strong></span> и има по <strong>3</strong>                                        лекции на седмица.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="text-center row">
+                                <div class="row">
+                                    <p>
+                                        <strong class="fontSize120">Участници: </strong>104 присъствено и 34 онлайн.
+                                    </p>
+                                    <div class="marginTop5" style="display:inline-block; vertical-align: bottom; ">
+                                        <strong class="fontSize120"><label for="ApplyDeadline">Срок за записване</label></strong>
+                                        <text>:</text>
+
+
+                                        <span>26 ноември, 00:00ч.</span>
+
+
+
+                                        <span class="bold"><span class="badge bgDanger">срокът е изтекъл</span></span>
+                                    </div>
+                                </div>
+                                <div class="marginTop10 marginLeft20 marginRight20 descriptionContainer course393 row">
+                                    <div class="col-sm-offset-2 col-sm-8">
+                                        <p class="courseDescription">
+
+
+
+                                            <p style="margin-top:3px;margin-bottom:3px;box-sizing:content-box;padding:0px;outline:0px;clear:both;color:#222222;font-family:'Segoe UI', Arial, sans-serif;font-size:13px;background-color:#ffffff;">Втората среща на <strong>"Училищната академия на Телерик" за сезон 2016/2017 </strong>ще
+                                                се проведе на <strong>27, 28 и 29 ноември 2016 г. в зала Ultimate</strong>                                                в нашия учебен център в <strong>София...;
+                </p>
+            </div>
+        </div>
+
+        <div class="marginTop10 text-center">
+            <div>
+                <div class="">
+                            <div class="row">
+                                <p class="col-sm-offset-2 col-sm-8 text-center">Срокът за записване е изтекъл</p>
+                            </div>
+                        <div class="row">
+                            <div class="text-center">
+
+                            </div>
+
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var courseId = 393;
+            var table = $('.course'+courseId).find('table');
+            table.wrap("<div class='scheduleTable'></div>");
+            table.show();
+
+            if (table.length != 0) {
+                $('#'+courseId).show();
+            }
+        })();
+    </script>
+</div>
+
+        </div>
+        <div class="row index-item">
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h1>
+                    Курс &quot;CSS стилизиране (ноември 2016)&quot;
+
+                    <a href="http://academy.telerik.com/about/licenses#public-change" title="Лиценз за промяна и споделяне на материали (с некомерсиална цел) " target="_blank">
+                        <img src="http://telerikacademy.com/Content/Images/CoursesLicenses/ShareAlike-License.png" alt="Course license" class="subscribeButton" />
+                    </a>
+            </h1>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                    <a class="btn btn-success" href="/Courses/Courses/Details/397">Материалите за курса</a>
+
+                    <a class="btn btn-success" href="/Courses/css">Предходни издания</a>
+            </div>
+        </div>
+
+        <div class="text-center row">
+            <div class="col-xs-12">
+                <p>
+                    Курсът започва на <strong>2016-11-17</strong>
+                                                <span>, приключва на <strong>2016-12-10</strong></span> и има по <strong>1</strong>                                                лекция на седмица.
+                                            </p>
+                                    </div>
+                                </div>
+                                <div class="text-center row">
+                                    <div class="row">
+                                        <p>
+                                            <strong class="fontSize120">Участници: </strong>453 присъствено и 364 онлайн.
+                                        </p>
+                                        <div class="marginTop5" style="display:inline-block; vertical-align: bottom; ">
+                                            <strong class="fontSize120"><label for="ApplyDeadline">Срок за записване</label></strong>
+                                            <text>:</text>
+
+
+                                            <span>20 ноември, 23:59ч.</span>
+
+
+
+                                            <span class="bold"><span class="badge bgDanger">срокът е изтекъл</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="marginTop10 marginLeft20 marginRight20 descriptionContainer course397 row">
+                                        <div class="col-sm-offset-2 col-sm-8">
+                                            <p class="courseDescription">
+
+
+
+                                                <style>
+                                                                    tr {
+                                                        mso-height-source: auto;
+                                                    }
+                                                    
+                                                    col {
+                                                        mso-width-source: auto;
+                                                    }
+                                                    
+                                                    br {
+                                                        mso-data-placement: same-cell;
+                                                    }
+                                                    
+                                                    .style0 {
+                                                        mso-number-format: General;
+                                                        text-align: general;
+                                                        vertical-align: bottom;
+                                                        white-space: nowrap;
+                                                        mso-rotate: 0;
+                                                        mso-background-source: auto;
+                                                        mso-pattern: auto;
+                                                        color: black;
+                                                        font-size: 11.0pt;
+                                                        font-weight: 400;
+                                                        font-style: normal;
+                                                        text-decoration: none;
+                                                        font-family: Calibri, sans-serif;
+                                                        ms...;
+                                                        </p> </div> </div> <div class="marginTop10 text-center"> <div> <div class=""> <div class="row"> <p class="col-sm-offset-2 col-sm-8 text-center">Срокът за записване е изтекъл</p> </div> <div class="row"> <div class="text-center"> </div> </div> </div> </div> </div> </div> <script> (function () {
+                                                            var courseId=397;
+                                                            var table=$('.course'+courseId).find('table');
+                                                            table.wrap("<div class='scheduleTable'></div>");
+                                                            table.show();
+                                                            if (table.length !=0) {
+                                                                $('#'+courseId).show();
+                                                            }
+                                                        }
+                                                        )();
+                                                        </script> </div> </div> <div class="row index-item"> <div class="container"> <div class="row"> <div class="col-xs-12 text-center"> <h1> Курс &quot;
+                                                        C# за напреднали (ноември 2016)&quot;
+                                                        <a href="http://academy.telerik.com/about/licenses#public-change" title="Лиценз за промяна и споделяне на материали (с некомерсиална цел) " target="_blank"> <img src="http://telerikacademy.com/Content/Images/CoursesLicenses/ShareAlike-License.png" alt="Course license" class="subscribeButton" /> </a> </h1> </div> </div> <div class="row"> <div class="col-xs-12 text-center"> <a class="btn btn-success" href="/Courses/Courses/Details/398">Материалите за курса</a> <a class="btn btn-success" href="/Courses/csharp-part2">Предходни издания</a> </div> </div> <div class="text-center row"> <div class="col-xs-12"> <p> Курсът започва на <strong>2016-11-14</strong> <span>,
+                                                        приключва на <strong>2016-12-07</strong></span> и има по <strong>2</strong> лекции на седмица. </p> </div> </div> <div class="text-center row"> <div class="row"> <p> <strong class="fontSize120">Участници: </strong>395 присъствено и 268 онлайн. </p> <div class="marginTop5" style="display:inline-block; vertical-align: bottom; "> <strong class="fontSize120"><label for="ApplyDeadline">Срок за записване</label></strong><text>:</text> <span>20 ноември,
+                                                        00:00ч.</span> <span class="bold"><span class="badge bgDanger">срокът е изтекъл</span></span> </div> </div> <div class="marginTop10 marginLeft20 marginRight20 descriptionContainer course398 row"> <div class="col-sm-offset-2 col-sm-8"> <p class="courseDescription"> <p></p><table border="0" cellpadding="0" cellspacing="0" style="font-family:'Times New Roman';border-collapse:collapse;table-layout:fixed;width:591pt;" width="790"><colgroup><col style="width:62pt;" width="83" /><col style="width:39pt;" width="52" /><col span="5" style="width:98pt;" width="131" /></colgroup><tbody><tr height="40" style="height:30pt;"><td class="xl65" height="40" style="padding-top...;
+ </p> </div> </div> <div class="marginTop10 text-center"> <div> <div class=""> <div class="row"> <p class="col-sm-offset-2 col-sm-8 text-center">Срокът за записване е изтекъл</p> </div> <div class="row"> <div class="text-center"> </div> </div> </div> </div> </div> </div> <script> (function () {
+                                                            var courseId=398;
+                                                            var table=$('.course'+courseId).find('table');
+                                                            table.wrap("<div class='scheduleTable'></div>");
+                                                            table.show();
+                                                            if (table.length !=0) {
+                                                                $('#'+courseId).show();
+                                                            }
+                                                        }
+                                                        )();
+                                                        </script> </div> </div> <div class="row index-item"> <div class="container"> <div class="row"> <div class="col-xs-12 text-center"> <h1> Курс &quot;
+                                                        Структури от данни и алгоритми (ноември 2016)&quot;
+                                                        <a href="http://academy.telerik.com/about/licenses#public-change" title="Лиценз за промяна и споделяне на материали (с некомерсиална цел) " target="_blank"> <img src="http://telerikacademy.com/Content/Images/CoursesLicenses/ShareAlike-License.png" alt="Course license" class="subscribeButton" /> </a> </h1> </div> </div> <div class="row"> <div class="col-xs-12 text-center"> <a class="btn btn-success" href="/Courses/Courses/Details/399">Материалите за курса</a> <a class="btn btn-success" href="/Courses/data-structures-and-algorithms">Предходни издания</a> </div> </div> <div class="text-center row"> <div class="col-xs-12"> <p> Курсът започва на <strong>2016-11-14</strong> <span>,
+                                                        приключва на <strong>2016-12-23</strong></span> и има по <strong>3</strong> лекции на седмица. </p> </div> </div> <div class="text-center row"> <div class="row"> <p> <strong class="fontSize120">Участници: </strong>171 присъствено и 99 онлайн. </p> <div class="marginTop5" style="display:inline-block; vertical-align: bottom; "> <strong class="fontSize120"><label for="ApplyDeadline">Срок за записване</label></strong><text>:</text> <span>20 ноември,
+                                                        23:59ч.</span> <span class="bold"><span class="badge bgDanger">срокът е изтекъл</span></span> </div> </div> <div class="marginTop10 marginLeft20 marginRight20 descriptionContainer course399 row"> <div class="col-sm-offset-2 col-sm-8"> <p class="courseDescription"> <table border="0" cellspacing="0"><colgroup width="253"></colgroup><colgroup width="88"></colgroup><colgroup span="5" width="130"></colgroup><tbody><tr><td align="center" bgcolor="#000000" height="44" style="border-top:1px solid #000000;border-bottom:1px solid #000000;border-left:1px solid #000000;border-right:1px solid #000000;" valign="middle"><strong><span style="color:#FFFFFF;font-family:Times...;
+ </p> </div> </div> <div> <div class="row"> <div class="col-sm-4 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №1</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Понеделник 11:00</span> </div> </div> <div class="col-sm-4 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №2</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Сряда 11:00</span> </div> </div> <div class="col-sm-4 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №3</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Петък 11:00</span> </div> </div> </div> </div> <div class="marginTop10 text-center"> <div> <div class=""> <div class="row"> <p>Записан/a сте за <strong>присъствено</strong> участие в този курс</p> </div> <div class="row"> <form action="/Courses/Courses/Quit" class="changeParticipationType" id="MoveToOnlineForm" method="post"> <input type="hidden" name="id" value="399" /> <input type="submit" id="MoveToOnlineButton" class="btn btn-success" value="Преминете онлайн" /> </form> </div> </div> <div class=""> <span class="btn" onclick="confirmQuitCourse(399)">Отпишете курса</span> </div> </div> </div> </div> <script> (function () {
+                                                            var courseId=399;
+                                                            var table=$('.course'+courseId).find('table');
+                                                            table.wrap("<div class='scheduleTable'></div>");
+                                                            table.show();
+                                                            if (table.length !=0) {
+                                                                $('#'+courseId).show();
+                                                            }
+                                                        }
+                                                        )();
+                                                        </script> </div> </div> <div class="row index-item"> <div class="container"> <div class="row"> <div class="col-xs-12 text-center"> <h1> Курс &quot;
+                                                        Уеб приложения с Node.js&quot;
+                                                        <a href="http://academy.telerik.com/about/licenses#public-change" title="Лиценз за промяна и споделяне на материали (с некомерсиална цел) " target="_blank"> <img src="http://telerikacademy.com/Content/Images/CoursesLicenses/ShareAlike-License.png" alt="Course license" class="subscribeButton" /> </a> </h1> </div> </div> <div class="row"> <div class="col-xs-12 text-center"> <a class="btn btn-success" href="/Courses/Courses/Details/400">Материалите за курса</a> <a class="btn btn-success" href="/Courses/end-to-end-javascript-applications">Предходни издания</a> </div> </div> <div class="text-center row"> <div class="col-xs-12"> <p> Курсът започва на <strong>2016-11-14</strong> <span>,
+                                                        приключва на <strong>2016-12-06</strong></span> и има по <strong>5</strong> лекции на седмица. </p> </div> </div> <div class="text-center row"> <div class="row"> <p> <strong class="fontSize120">Участници: </strong>132 присъствено и 36 онлайн. </p> <div class="marginTop5" style="display:inline-block; vertical-align: bottom; "> <strong class="fontSize120"><label for="ApplyDeadline">Срок за записване</label></strong><text>:</text> <span>20 ноември,
+                                                        00:00ч.</span> <span class="bold"><span class="badge bgDanger">срокът е изтекъл</span></span> </div> </div> <div class="marginTop10 marginLeft20 marginRight20 descriptionContainer course400 row"> <div class="col-sm-offset-2 col-sm-8"> <p class="courseDescription"> <p><span style="line-height:1.5;">Курсът цели да ви запознае с разработката на End-to-end JS приложения върху платформата Node.js. По време на обучението ще разберете как да създадете базов сървър с Node.js,
+                                                        ще се научите да работите с нерелационни бази данни,
+                                                        MongoDB и Mongoose &nbsp;
+                                                        (улеснен вариант на MongoDB в JavaScript) и ще се запознаете с Express -&nbsp;
+                                                        MVC решение за Node.js,
+                                                        улесняв...;
+                                                        </p> </div> </div> <div> <div class="row"> <div class="col-sm-2 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №1</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Понеделник 14:00</span> </div> </div> <div class="col-sm-2 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №2</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Вторник 11:00</span> </div> </div> <div class="col-sm-2 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №3</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Сряда 14:00</span> </div> </div> <div class="col-sm-2 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №4</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Четвъртък 11:00</span> </div> </div> <div class="col-sm-2 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №5</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Петък 14:00</span> </div> </div> </div> </div> <div class="marginTop10 text-center"> <div> <div class=""> <div class="row"> <p>Записан/a сте за <strong>присъствено</strong> участие в този курс</p> </div> <div class="row"> <form action="/Courses/Courses/Quit" class="changeParticipationType" id="MoveToOnlineForm" method="post"> <input type="hidden" name="id" value="400" /> <input type="submit" id="MoveToOnlineButton" class="btn btn-success" value="Преминете онлайн" /> </form> </div> </div> <div class=""> <span class="btn" onclick="confirmQuitCourse(400)">Отпишете курса</span> </div> </div> </div> </div> <script> (function () {
+                                                            var courseId=400;
+                                                            var table=$('.course'+courseId).find('table');
+                                                            table.wrap("<div class='scheduleTable'></div>");
+                                                            table.show();
+                                                            if (table.length !=0) {
+                                                                $('#'+courseId).show();
+                                                            }
+                                                        }
+                                                        )();
+                                                        </script> </div> </div> <div class="row index-item"> <div class="container"> <div class="row"> <div class="col-xs-12 text-center"> <h1> Курс &quot;
+                                                        UX дизайн и работа с Photoshop&quot;
+                                                        <a href="http://academy.telerik.com/about/licenses#public-change" title="Лиценз за промяна и споделяне на материали (с некомерсиална цел) " target="_blank"> <img src="http://telerikacademy.com/Content/Images/CoursesLicenses/ShareAlike-License.png" alt="Course license" class="subscribeButton" /> </a> </h1> </div> </div> <div class="row"> <div class="col-xs-12 text-center"> <a class="btn btn-success" href="/Courses/Courses/Details/392">Материалите за курса</a> <a class="btn btn-success" href="/Courses/ux-design-and-photoshop">Предходни издания</a> </div> </div> <div class="text-center row"> <div class="col-xs-12"> <p> Курсът започва на <strong>2016-10-25</strong> <span>,
+                                                        приключва на <strong>2016-11-29</strong></span> и има по <strong>2</strong> лекции на седмица. </p> </div> </div> <div class="text-center row"> <div class="row"> <p> <strong class="fontSize120">Участници: </strong>49 присъствено и 39 онлайн. </p> <div class="marginTop5" style="display:inline-block; vertical-align: bottom; "> <strong class="fontSize120"><label for="ApplyDeadline">Срок за записване</label></strong><text>:</text> <span>28 октомври,
+                                                        23:59ч.</span> <span class="bold"><span class="badge bgDanger">срокът е изтекъл</span></span> </div> </div> <div class="marginTop10 marginLeft20 marginRight20 descriptionContainer course392 row"> <div class="col-sm-offset-2 col-sm-8"> <p class="courseDescription"> <meta content="text/html; charset=windows-1252" http-equiv="Content-Type" /><meta content="Excel.Sheet" name="ProgId" /><meta content="Microsoft Excel 15" name="Generator" /><link href="COURSE_SCHEDULE_files/filelist.xml" rel="File-List" /><style id="COURSE_SCHEDULE_24149_Styles">&lt;
+                                                        !--table {
+                                                            mso-displayed-decimal-separator: "\.";
+                                                            mso-displayed-thousand-separator: "\,";
+                                                        }
+                                                        .xl1524149 {
+                                                            padding-top: ...;
+                                                            </p> </div> </div> <div class="marginTop10 text-center"> <div> <div class=""> <div class="row"> <p>Записан/a сте за <strong>онлайн</strong> участие в този курс</p> </div> <div class="row"> <form action="/Courses/Courses/Quit" class="changeParticipationType" id="MoveToOnlineForm" method="post"></form> </div> </div> <div class=""> <span class="btn" onclick="confirmQuitCourse(392)">Отпишете курса</span> </div> </div> </div> </div> <script> (function () {
+                                                                var courseId=392;
+                                                                var table=$('.course'+courseId).find('table');
+                                                                table.wrap("<div class='scheduleTable'></div>");
+                                                                table.show();
+                                                                if (table.length !=0) {
+                                                                    $('#'+courseId).show();
+                                                                }
+                                                            }
+                                                            )();
+                                                            </script> </div> </div> <div class="row index-item"> <div class="container"> <div class="row"> <div class="col-xs-12 text-center"> <h1> Курс &quot;
+                                                            Училищна академия: Въведение в TypeScript&quot;
+                                                            <a href="http://academy.telerik.com/about/licenses#public-change" title="Лиценз за промяна и споделяне на материали (с некомерсиална цел) " target="_blank"> <img src="http://telerikacademy.com/Content/Images/CoursesLicenses/ShareAlike-License.png" alt="Course license" class="subscribeButton" /> </a> </h1> </div> </div> <div class="row"> <div class="col-xs-12 text-center"> <a class="btn btn-success" href="/Courses/Courses/Details/383">Материалите за курса</a> <a class="btn btn-success" href="/Courses/typescript-fundamentals">Предходни издания</a> </div> </div> <div class="text-center row"> <div class="col-xs-12"> <p> Курсът започва на <strong>2016-10-21</strong> <span>,
+                                                            приключва на <strong>2016-10-23</strong></span> и има по <strong>3</strong> лекции на седмица. </p> </div> </div> <div class="text-center row"> <div class="row"> <p> <strong class="fontSize120">Участници: </strong>187 присъствено и 111 онлайн. </p> <div class="marginTop5" style="display:inline-block; vertical-align: bottom; "> <strong class="fontSize120"><label for="ApplyDeadline">Срок за записване</label></strong><text>:</text> <span>19 октомври,
+                                                            00:00ч.</span> <span class="bold"><span class="badge bgDanger">срокът е изтекъл</span></span> </div> </div> <div class="marginTop10 marginLeft20 marginRight20 descriptionContainer course383 row"> <div class="col-sm-offset-2 col-sm-8"> <p class="courseDescription"> <p style="box-sizing:content-box;margin-top:3px;margin-bottom:3px;padding:0px;outline:0px;clear:both;color:#222222;font-family:'Segoe UI', Arial, sans-serif;font-size:13px;background-color:#ffffff;">Първата среща на "Училищната академия на Телерик" за сезон 2016/2017 ще се проведе на 21,
+                                                            22 и 23 октомври 2016 г. в зала Ultimate в нашия учебен център в София. Темата ще бъде "Въведение в TypeScrip...;
+ </p> </div> </div> <div class="marginTop10 text-center"> <div> <div class=""> <div class="row"> <p class="col-sm-offset-2 col-sm-8 text-center">Срокът за записване е изтекъл</p> </div> <div class="row"> <div class="text-center"> </div> </div> </div> </div> </div> </div> <script> (function () {
+                                                                var courseId=383;
+                                                                var table=$('.course'+courseId).find('table');
+                                                                table.wrap("<div class='scheduleTable'></div>");
+                                                                table.show();
+                                                                if (table.length !=0) {
+                                                                    $('#'+courseId).show();
+                                                                }
+                                                            }
+                                                            )();
+                                                            </script> </div> </div> <div class="row index-item"> <div class="container"> <div class="row"> <div class="col-xs-12 text-center"> <h1> Курс &quot;
+                                                            Бази данни (октомври 2016)&quot;
+                                                            <a href="http://academy.telerik.com/about/licenses#public-change" title="Лиценз за промяна и споделяне на материали (с некомерсиална цел) " target="_blank"> <img src="http://telerikacademy.com/Content/Images/CoursesLicenses/ShareAlike-License.png" alt="Course license" class="subscribeButton" /> </a> </h1> </div> </div> <div class="row"> <div class="col-xs-12 text-center"> <a class="btn btn-success" href="/Courses/Courses/Details/388">Материалите за курса</a> <a class="btn btn-success" href="/Courses/databases">Предходни издания</a> </div> </div> <div class="text-center row"> <div class="col-xs-12"> <p> Курсът започва на <strong>2016-10-12</strong> <span>,
+                                                            приключва на <strong>2016-11-09</strong></span> и има по <strong>4</strong> лекции на седмица. </p> </div> </div> <div class="text-center row"> <div class="row"> <p> <strong class="fontSize120">Участници: </strong>172 присъствено и 20 онлайн. </p> <div class="marginTop5" style="display:inline-block; vertical-align: bottom; "> <strong class="fontSize120"><label for="ApplyDeadline">Срок за записване</label></strong><text>:</text> <span>17 октомври,
+                                                            00:00ч.</span> <span class="bold"><span class="badge bgDanger">срокът е изтекъл</span></span> </div> </div> <div class="marginTop10 marginLeft20 marginRight20 descriptionContainer course388 row"> <div class="col-sm-offset-2 col-sm-8"> <p class="courseDescription"> <meta content="text/html; charset=windows-1252" http-equiv="Content-Type" /><meta content="Excel.Sheet" name="ProgId" /><meta content="Microsoft Excel 15" name="Generator" /><link href="COURSE_SCHEDULE-db-first-week_files/filelist.xml" rel="File-List" /><style id="COURSE_SCHEDULE_10674_Styles">&amp;
+                                                            amp;
+                                                            amp;
+                                                            amp;
+                                                            amp;
+                                                            amp;
+                                                            amp;
+                                                            lt;
+                                                            !--table {
+                                                                mso-displayed-decimal-separator: "\.";
+                                                                mso-displayed-thousand-...;
+                                                                </p> </div> </div> <div> <div class="row"> <div class="col-sm-3 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №1</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Вторник 11: 00</span> </div> </div> <div class="col-sm-3 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №2</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Сряда 11: 00</span> </div> </div> <div class="col-sm-3 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №3</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Четвъртък 11: 00</span> </div> </div> <div class="col-sm-3 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №4</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Петък 11:00</span> </div> </div> </div> </div> <div class="marginTop10 text-center"> <div> <div class=""> <div class="row"> <p>Записан/a сте за <strong>присъствено</strong> участие в този курс</p> </div> <div class="row"> <form action="/Courses/Courses/Quit" class="changeParticipationType" id="MoveToOnlineForm" method="post"> <input type="hidden" name="id" value="388" /> <input type="submit" id="MoveToOnlineButton" class="btn btn-success" value="Преминете онлайн" /> </form> </div> </div> <div class=""> <span class="btn" onclick="confirmQuitCourse(388)">Отпишете курса</span> </div> </div> </div> </div> <script> (function () {
+                                                                    var courseId=388;
+                                                                    var table=$('.course'+courseId).find('table');
+                                                                    table.wrap("<div class='scheduleTable'></div>");
+                                                                    table.show();
+                                                                    if (table.length !=0) {
+                                                                        $('#'+courseId).show();
+                                                                    }
+                                                                }
+                                                                )();
+                                                                </script> </div> </div> <div class="row index-item"> <div class="container"> <div class="row"> <div class="col-xs-12 text-center"> <h1> Курс &quot;
+                                                                Шаблони за дизайн (октомври 2016)&quot;
+                                                                <a href="http://academy.telerik.com/about/licenses#public-change" title="Лиценз за промяна и споделяне на материали (с некомерсиална цел) " target="_blank"> <img src="http://telerikacademy.com/Content/Images/CoursesLicenses/ShareAlike-License.png" alt="Course license" class="subscribeButton" /> </a> </h1> </div> </div> <div class="row"> <div class="col-xs-12 text-center"> <a class="btn btn-success" href="/Courses/Courses/Details/389">Материалите за курса</a> <a class="btn btn-success" href="/Courses/design-patterns">Предходни издания</a> </div> </div> <div class="text-center row"> <div class="col-xs-12"> <p> Курсът започва на <strong>2016-10-12</strong> <span>,
+                                                                приключва на <strong>2016-11-11</strong></span> и има по <strong>2</strong> лекции на седмица. </p> </div> </div> <div class="text-center row"> <div class="row"> <p> <strong class="fontSize120">Участници: </strong>172 присъствено и 26 онлайн. </p> <div class="marginTop5" style="display:inline-block; vertical-align: bottom; "> <strong class="fontSize120"><label for="ApplyDeadline">Срок за записване</label></strong><text>:</text> <span>17 октомври,
+                                                                00:00ч.</span> <span class="bold"><span class="badge bgDanger">срокът е изтекъл</span></span> </div> </div> <div class="marginTop10 marginLeft20 marginRight20 descriptionContainer course389 row"> <div class="col-sm-offset-2 col-sm-8"> <p class="courseDescription"> <meta content="text/html; charset=windows-1252" http-equiv="Content-Type" /><meta content="Excel.Sheet" name="ProgId" /><meta content="Microsoft Excel 15" name="Generator" /><link href="COURSE_SCHEDULE-PATTERNS_files/filelist.xml" rel="File-List" /><style id="COURSE_SCHEDULE_16702_Styles">&lt;
+                                                                !--table {
+                                                                    mso-displayed-decimal-separator: "\.";
+                                                                    mso-displayed-thousand-separator: "\,";
+                                                                }
+                                                                .xl1516702 {
+                                                                    pad...;
+                                                                    </p> </div> </div> <div> <div class="row"> <div class="col-sm-6 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №1</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Вторник 16: 00</span> </div> </div> <div class="col-sm-6 marginBottom10" style=""> <h5 class="marginLeft0" style="margin-bottom: 7px; "><strong style="border-bottom: 1px solid #444; ">Лекция №2</strong></h5> <div class="groupName color222" style="margin-top: 2px; "> <span>Четвъртък 14:00</span> </div> </div> </div> </div> <div class="marginTop10 text-center"> <div> <div class=""> <div class="row"> <p>Записан/a сте за <strong>присъствено</strong> участие в този курс</p> </div> <div class="row"> <form action="/Courses/Courses/Quit" class="changeParticipationType" id="MoveToOnlineForm" method="post"> <input type="hidden" name="id" value="389" /> <input type="submit" id="MoveToOnlineButton" class="btn btn-success" value="Преминете онлайн" /> </form> </div> </div> <div class=""> <span class="btn" onclick="confirmQuitCourse(389)">Отпишете курса</span> </div> </div> </div> </div> <script> (function () {
+                                                                        var courseId=389;
+                                                                        var table=$('.course'+courseId).find('table');
+                                                                        table.wrap("<div class='scheduleTable'></div>");
+                                                                        table.show();
+                                                                        if (table.length !=0) {
+                                                                            $('#'+courseId).show();
+                                                                        }
+                                                                    }
+                                                                    )();
+                                                                    </script> </div> </div> </div> <script> $(".changeParticipationType").on("submit", function () {
+                                                                        var answer=confirm("Сигурни ли сте, че искате да смените формата си на обучение?");
+                                                                        return answer;
+                                                                    }
+                                                                    );
+                                                                    $(function () {
+                                                                        $('div.descriptionContainer').find('table').addClass('table table-striped').css('border', '1px solid #DDD');
+                                                                    }
+                                                                    );
+                                                                    </script> <div class="container"> <div class="row pagination-container"> <div class="col-xs-12 text-center"> <ul class="list list-pagination text-center"> <li class="page-link-item current"> <a class="btn btn-success hover" href="/Courses/Courses/List?page=1"> 1 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=2"> 2 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=3"> 3 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=4"> 4 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=5"> 5 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=6"> 6 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=7"> 7 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=8"> 8 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=9"> 9 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=10"> 10 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=11"> 11 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=12"> 12 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=13"> 13 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=14"> 14 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=15"> 15 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=16"> 16 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=17"> 17 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=18"> 18 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=19"> 19 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=20"> 20 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=21"> 21 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=22"> 22 </a> </li> <li class="page-link-item"> <a class="btn btn-success" href="/Courses/Courses/List?page=23"> 23 </a>
