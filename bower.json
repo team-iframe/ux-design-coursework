@@ -1,0 +1,23 @@
+{
+  "name": "ux-design-coursework",
+  "homepage": "https://github.com/team-iframe/ux-design-coursework",
+  "authors": [
+    "StoikoNeykov",
+    "GalinStoychev",
+    "shakuu",
+    "ahansb"
+  ],
+  "description": "Teamwork iframe",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
