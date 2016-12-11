@@ -1,0 +1,34 @@
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+#logo{
+    padding: 0px;
+}
+.logo-img{
+    padding: 0px;
+    max-height: 100%;
+    max-width: 100%;
+}
+#navigation{
+    border: none;
+}
+#navigation-buttons{
+    font-weight: bolder;/*
+    text-transform: uppercase;*/
+}
+#navigation-buttons-active a{
+    color: #ff5e56;
+    border-bottom: 2px solid #ff5e56;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+#navigation-buttons-active{
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+#footer-wrapper{
+    background:#ff5e56;
+}
