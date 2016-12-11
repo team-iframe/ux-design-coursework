@@ -1,0 +1,247 @@
+body {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#account-settings {
+    margin-bottom: 0;
+}
+
+#account-settings li {
+    padding: 0;
+}
+
+#account-settings img {
+    max-width: 50%;
+}
+
+#account-settings li {
+    display: inline-block;
+}
+
+.navbar-header {
+    width: 15%;
+}
+
+#navbar-main {
+    font-size: 1.2em;
+    width: 85%;
+    padding: 0;
+}
+
+#navbar-main a {
+    color: black;
+}
+
+ul.main-navbar-items {
+    padding: 0;
+}
+
+.main-navbar-items {
+    list-style-type: none;
+    width: 100%;
+}
+
+.main-navbar-items li {
+    display: inline-block;
+    margin-left: 5%;
+}
+
+#navbar-main > ul > li:hover > a {
+    color: #ff5e56;
+    text-decoration: underline;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.navbar-brand img {
+    max-width: 100%;
+}
+
+#courses-navigation {
+    padding: 0;
+    margin: 0;
+}
+
+#side-menu {
+    padding-left: 0;
+}
+
+#social-networks li {
+    display: inline;
+}
+
+#footer {
+    font-size: 0.8em;
+    background: #FF5E56;
+    color: white;
+}
+
+#footer a {
+    color: white;
+}
+
+#footer img {
+    max-width: 55%;
+}
+
+#main {
+    padding-bottom: 5%;
+}
+
+#courses-navigation {
+    padding-top: 8%;
+}
+
+#courses-navigation > li {
+    margin-bottom: 5%;
+    list-style: none;
+}
+
+#courses-navigation > li > a {
+    padding: 10%;
+    list-style: none;
+    background: #518baf;
+    white-space: normal;
+    border-radius: 0;
+    border: none;
+}
+
+fieldset {
+    border: 3px solid #518BAF;
+    padding: 0 5% 5% 5%;
+}
+
+.course-title .row > div {
+    padding: 0;
+}
+
+.course-title {
+    color: #518BAF;
+    border-bottom: none;
+    display: inline-block;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 80%
+}
+
+.course-title img {
+    max-width: 60%;
+}
+
+.course-container {
+    color: #518BAF;
+    padding: 0 0 5% 5%;
+}
+
+.course-container p {
+    padding: 0 3% 5% 3%;
+}
+
+.course-more-info {
+    background: #E14209;
+    border: none;
+    border-radius: 0;
+}
+
+.btn-more-info {
+    margin-bottom: 3%;
+}
+
+#account-settings .navbar-nav {
+    width: 100%;
+    text-align: center;
+}
+
+#account-settings .navbar-nav > li {
+    float: none;
+    display: inline-block;
+}
+
+.icon-bar {
+    background: black;
+}
+
+.navbar-collapse.in {
+    overflow: hidden;
+}
+
+.navbar-collapse {
+    overflow: hidden;
+}
+
+#social-networks img {
+    max-height: 40px;
+}
+
+#footer {
+    padding-bottom: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    .main-navbar-items li {
+        display: inline-block;
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .main-navbar-items li {
+        display: inline-block;
+        font-size: 0.9em;
+        margin-left: 3%;
+    }
+    .main-navbar-items li:last-child {
+        width: 20%;
+    }
+    .main-navbar-items li:first-child {
+        margin-left: 5%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-header {
+        width: 100%;
+        display: block;
+    }
+
+    #navbar-main {
+        width: 100%;
+        display: block;
+        margin-left:0;
+        margin-right: 0;
+    }
+
+
+    .main-navbar-items li {
+        text-align: center;
+        display: block;
+        font-size: 0.9em;
+        padding-bottom: 2%;
+    }
+
+    .main-navbar-items li:last-child {
+        width: 90%;
+    }
+
+    .main-navbar-items form {
+        margin-left: auto;
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+    #side-menu > ul > li{
+        display: inline-block;
+        width: 30%;
+    }
+
+    #side-menu > ul > li > a{
+        display: inline-block;
+        height: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
