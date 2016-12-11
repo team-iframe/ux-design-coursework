@@ -14,7 +14,7 @@
 <div id="root" class="container">
     <header>
         <div class="row">
-            <div id="user-things" class="col-md-4 col-sm-4 col-xs-4 col-centered">
+            <div id="user-things" class="col-md-3 col-sm-3 col-xs-3 col-centered">
                 <!--TODO User icons and think about been a or button tags-->
                 <ul id="user-icons" class="list-inline list-unstyled">
                     <li>
@@ -49,7 +49,8 @@
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a id="logo" href="/" class="navbar-brand">
-                            <img src="../../wireframe-assets/telerik-academy-logo-FF5E56.png" alt="logo" class="logo-img">
+                            <img src="../../wireframe-assets/telerik-academy-logo-FF5E56.png" alt="logo"
+                                 class="logo-img">
                         </a>
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                                 data-target="#navbar">
@@ -87,25 +88,41 @@
     </header>
     <br>
 
-    <h1>Курс "C# за напреднали (ноември 2016)"</h1>
-    <strong>Срок за записване &nbsp;</strong><span>20 ноември, 00:00ч.</span>
+    <div class="jumbotron" id="course-header">
+        <div id="course-header-inner-wrapper">
+            <h2>Курс "C# за напреднали (ноември 2016)"</h2>
+            <strong>Срок за записване &nbsp;</strong><span>20 ноември, 00:00ч.</span>
 
-    <p>Курсът започва на <strong>2016-12-07</strong>, приключва на <strong>2017-01-04</strong> и има по
-        <strong>5</strong> лекции на седмица.</p>
+            <div class="pull-right">
+                <img src="" alt="licences">
+            </div>
+        </div>
+    </div>
+    <div id="course-info">
+        <h3 id="course-info-heading">За курса</h3>
 
-    <p><strong>Участници: </strong>395 присъствено и 268 онлайн.</p>
+        <div class="row">
+            <p class="col-md-8">Курсът започва на <strong>2016-12-07</strong>, приключва на <strong>2017-01-04</strong>
+                и има по
+                <strong>5</strong> лекции на седмица.</p>
 
-    <span>Остават 5 дни</span>
-    <button>Запиши ме</button>
-    <button>Запиши ме онлайн</button>
-    <p><strong>* За записалите се онлайн: </strong>За да бъдете допуснати до изпит, трябва да предадете всички
-        домашни
-        (без това за Exceptions) в срок до 01 декември 2016.</p>
+            <p class="col-md-4"><strong>Участници: </strong>395 присъствено и 268 онлайн.</p>
+        </div>
+
+
+        <span>Остават 5 дни</span>
+        <button>Запиши ме</button>
+        <button>Запиши ме онлайн</button>
+        <p><strong>* За записалите се онлайн: </strong>За да бъдете допуснати до изпит, трябва да предадете всички
+            домашни
+            (без това за Exceptions) в срок до 01 декември 2016.
+        </p>
+    </div>
     <br>
-    <button>Покажи програмата на курса</button>
+    <button id="show-program" data-val="0">Покажи програмата на курса</button>
     <br>
-    <table class="table table-bordered">
-        <thead>
+    <table class="table table-bordered" id="course-program">
+        <thead class="table-heading">
         <tr>
             <th>Седмица</th>
             <th>Час</th>
@@ -117,8 +134,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td rowspan="3" class="text-center">14 ноември<br/>-<br/>20 ноември</td>
+        <tr class="course-program-even">
+            <td rowspan="3" class="text-center course-program-main">14 ноември<br/>-<br/>20 ноември</td>
             <td class="text-center">10:00<br/>-<br/>14:00</td>
             <td>&nbsp;</td>
             <td>Въведение в курса,<br/>Многомерни масиви<br/>(зала Ultimate)</td>
@@ -134,7 +151,7 @@
             <td>&nbsp;</td>
             <td>Методи,<br/>Бройни системи<br/>(зала Ultimate)</td>
         </tr>
-        <tr>
+        <tr class="course-program-even">
             <td class="text-center">18:00<br/>-<br/>22:00</td>
             <td>&nbsp;</td>
             <td>Въведение в курса,<br/>Многомерни масиви<br/>&nbsp;(зала Enterprise)</td>
@@ -143,7 +160,7 @@
             <td>Методи,<br/>Бройни системи<br/>(зала Enterprise)</td>
         </tr>
         <tr>
-            <td rowspan="2" class="text-center">21 ноември<br/>-<br/>27 ноември</td>
+            <td rowspan="2" class="text-center course-program-main">21 ноември<br/>-<br/>27 ноември</td>
             <td class="text-center">10:00<br/>-<br/>14:00</td>
             <td>&nbsp;</td>
             <td>Класове и Обекти<br/>(зала Ultimate)</td>
@@ -151,7 +168,7 @@
             <td>Низове и текст<br/>(зала Ultimate)</td>
             <td>&nbsp;</td>
         </tr>
-        <tr>
+        <tr class="course-program-even">
             <td class="text-center">18:00<br/>-<br/>22:00</td>
             <td>&nbsp;</td>
             <td>Класове и Обекти<br/>(зала Enterprise)</td>
@@ -160,15 +177,15 @@
             <td>Низове и текст<br/>(зала Ultimate)</td>
         </tr>
         <tr>
-            <td rowspan="2" class="text-center">28 ноември<br/>-<br/>04 декември</td>
-            <td>10:00<br/>-<br/>14:00</td>
+            <td rowspan="2" class="text-center course-program-main">28 ноември<br/>-<br/>04 декември</td>
+            <td class="text-center">10:00<br/>-<br/>14:00</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>Изключения,<br/>Работа с файлове<br/>(зала Ultimate)</td>
             <td>Workshop<br/>(зала Ultimate)</td>
             <td>&nbsp;</td>
         </tr>
-        <tr>
+        <tr class="course-program-even">
             <td class="text-center">18:00<br/>-<br/>22:00</td>
             <td>&nbsp;</td>
             <td>Изключения,<br/>Работа с файлове<br/>(зала Enterprise)</td>
@@ -177,7 +194,7 @@
             <td>Workshop<br/>(зала Ultimate)</td>
         </tr>
         <tr>
-            <td rowspan="2" class="text-center">05 декември<br/>-<br/>11 декември</td>
+            <td rowspan="2" class="text-center course-program-main">05 декември<br/>-<br/>11 декември</td>
             <td class="text-center">10:00<br/>-<br/>16:00</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -185,7 +202,7 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
-        <tr>
+        <tr class="course-program-even">
             <td class="text-center">16:00<br/>-<br/>22:00</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -197,9 +214,10 @@
     </table>
     </br>
     <table class="table table-striped table-hover">
-        <thead class="media-heading">
+        <thead class="media-heading table-heading">
         <tr>
             <th>Име на лекция</th>
+            <th>Домашно</th>
             <th> Материали</th>
         </tr>
         </thead>
@@ -406,56 +424,69 @@
 </div>
 <div id="footer-wrapper" class="container-fluid">
 
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="versionAndTerms">
-                            <p>Всички права запазени © Telerik Academy 2012-2016 </p>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="versionAndTerms">
+                        <p>Всички права запазени © Telerik Academy 2012-2016 </p>
 
-                            <p><a href="/Home/About">Telerik Academy Learning System 5.7 (build 20160514.1dfa2d3</a></p>
+                        <p><a href="/Home/About">Telerik Academy Learning System 5.7 (build 20160514.1dfa2d3</a></p>
 
-                            <p class="termsAndConditions">
-                                <a href="http://telerikacademy.com/Files/1cf99863-2163-4c99-8e82-a667a2814924.pdf"
-                                   target="_blank">Правила
-                                    и условия</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="../../wireframe-assets/telerik-academy-logo-FF5E56.png" alt="logo" class="logo-img">
-                    </div>
-                    <div class="col-md-4">
-                        <ul id="SocialNetworks">
-                            <li>
-                                <a href="http://www.facebook.com/TelerikAcademy" target="_blank"></a>
-                            </li>
-                            <li>
-                                <a href="http://www.youtube.com/user/TelerikAcademy" target="_blank"></a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/#!/TelerikAcademy" target="_blank"></a>
-                            </li>
-                            <li>
-                                <a href="https://plus.google.com/u/0/b/105769630299292709719/" target="_blank"></a>
-                            </li>
-                            <li>
-                                <a href="/Rss/LatestCourses" target="_blank"></a>
-                            </li>
-                            <li>
-                                <a href="http://www.linkedin.com/groups?gid=3161033&amp;trk=hb_side_g"
-                                   target="_blank"></a>
-                            </li>
-                        </ul>
+                        <p class="termsAndConditions">
+                            <a href="http://telerikacademy.com/Files/1cf99863-2163-4c99-8e82-a667a2814924.pdf"
+                               target="_blank">Правила
+                                и условия</a>
+                        </p>
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <img src="../../wireframe-assets/telerik-academy-logo-FF5E56.png" alt="logo" class="logo-img">
+                </div>
+                <div class="col-md-4">
+                    <ul id="SocialNetworks">
+                        <li>
+                            <a href="http://www.facebook.com/TelerikAcademy" target="_blank"></a>
+                        </li>
+                        <li>
+                            <a href="http://www.youtube.com/user/TelerikAcademy" target="_blank"></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/#!/TelerikAcademy" target="_blank"></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/u/0/b/105769630299292709719/" target="_blank"></a>
+                        </li>
+                        <li>
+                            <a href="/Rss/LatestCourses" target="_blank"></a>
+                        </li>
+                        <li>
+                            <a href="http://www.linkedin.com/groups?gid=3161033&amp;trk=hb_side_g"
+                               target="_blank"></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
 </div>
 <!--scripts-->
 <script src="../../lib/bower_components/jquery/dist/jquery.js"></script>
 <script src="../../lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script>
+    $('#show-program').on('click', function () {
+        if ($('#show-program').data("val") == 0) {
+            $('#course-program').show();
+            $('#show-program').data('val', '1');
+            $('#show-program').html('Скрий програмата на курса');
+        } else if ($('#show-program').data("val") == 1) {
+            $('#course-program').hide();
+            $('#show-program').data('val', '0');
+            $('#show-program').html('Покажи програмата на курса');
+        }
+    });
+</script>
 </body>
 
 </html>
