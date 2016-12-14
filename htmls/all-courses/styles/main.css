@@ -97,9 +97,14 @@ body {
     text-decoration: underline;
 }
 
-#navbar-main > ul > li > a:hover {
+#navbar-main a:hover, #navbar-main a:active, #navbar-main a:focus {
     background: transparent;
     background-color: transparent;
+}
+
+#navbar-main form {
+    border: none;
+    box-shadow: none;
 }
 
 .navbar-brand {
@@ -108,10 +113,6 @@ body {
 
 .navbar-brand img {
     max-width: 100%;
-}
-
-#side-menu {
-    padding-left: 0;
 }
 
 #social-networks li {
@@ -140,6 +141,12 @@ body {
     padding: 0;
 }
 
+#courses-navigation span {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid white;
+}
+
 #courses-navigation {
     margin-top: 70%;
 }
@@ -155,10 +162,23 @@ body {
     cursor: pointer;
     padding: 3%;
     height: 60px;
+    position: relative;
 }
 
 #courses-navigation > div {
     margin-bottom: 5%;
+}
+
+#courses-navigation .panel-heading.smaller-titles a {
+    position: absolute;
+    top: 30%;
+    display: inline;
+}
+
+#courses-navigation .panel-heading span {
+    position: absolute;
+    top: 45%;
+    right: 5%;
 }
 
 #courses-navigation a {
@@ -228,14 +248,16 @@ body {
 
 .course-more-info {
     background: #51B764;
+    color: white;
     border: none;
     border-radius: 0;
     text-transform: uppercase;
     padding: 4% 0;
 }
 
-.course-more-info:hover {
+.course-more-info:hover, .course-more-info:active, .course-more-info:focus {
     background: #51B764;
+    color: white;
 }
 
 .btn-more-info {
@@ -270,26 +292,13 @@ body {
     max-height: 35px;
 }
 
-@media only screen and (max-width: 768px) {
-    .navbar-header {
-        width: 100%;
-        display: block;
-    }
-    #navbar-main {
-        width: 100%;
-        display: block;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    #dropdown-settings {
-        background: white;
-        border: 1px solid lightgray;
-        box-shadow: 0 3px 2px black;
-        box-sizing: border-box;
+@media only screen and (max-width: 1200px) {
+    #courses-navigation .panel-heading.smaller-titles a {
+        position: static;
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 992px) {
     #courses-navigation {
         margin-top: 0;
     }
@@ -306,5 +315,45 @@ body {
     #navbar-main a {
         padding-left: 3%;
         padding-right: 3%;
+    }
+    #social-networks img {
+        padding: 0 0.8%;
+    }
+    #side-menu span {
+        display: none;
+    }
+}
+
+@media only screen and (width: 992px) {
+    #side-menu .panel-heading {
+        text-align: left;
+        font-size: 1em;
+        padding: 3%;
+        height: 60px;
+    }
+    #courses-navigation {
+        margin-top: 70%;
+    }
+    #side-menu span {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-header {
+        width: 100%;
+        display: block;
+    }
+    #navbar-main {
+        width: 100%;
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #dropdown-settings {
+        background: white;
+        border: 1px solid lightgray;
+        box-shadow: 0 3px 2px black;
+        box-sizing: border-box;
     }
 }

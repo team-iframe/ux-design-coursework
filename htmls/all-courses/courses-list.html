@@ -34,10 +34,14 @@
                                         <img src="./images/email 1.png" alt="messages">
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" id="user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <img src="./images/user.png" alt="user">
                                     </a>
+                                    <div id="dropdown-settings" class="dropdown-menu text-center" area-labelledby="user">
+                                        <a class="dropdown-header">ПРИЯТЕЛИ</a>
+                                        <a class="dropdown-header">ОТБОРНИ РАБОТИ</a>
+                                    </div>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" id="settings" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -60,12 +64,13 @@
                             <img class="navbar-brand" src="./images/telerik-academy-logo-nav.png" alt="telerik-academy">
                         </a>
                         <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <div id="navbar-main" class="navbar-collapse collapse in" aria-expanded="false">
+                    <div id="navbar-main" class="navbar-collapse collapse" aria-expanded="false" style="height: 0">
                         <ul class="nav navbar-nav nav-inline list-inline pull-right">
                             <li>
                                 <a href="#">АКАДЕМИЯ</a>
@@ -98,83 +103,89 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#csharp-fundamentals">
                                     <a>Основи на програмирането</a>
+                                    <span class="caret pull-right"></span>
                                 </div>
                                 <div id="csharp-fundamentals" class="panel-collapse collapse">
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/323">Основи на C#</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/331">C# за напреднали</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/338">ООП със C#</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/339">Основи на JavaScript</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/245">ООП с JavaScript</a></li>
-                                    </ul>
+                                    <div class="list-group">
+                                        <a class="list-group-item" href="/Courses/Courses/Details/323">Основи на C#</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/331">C# за напреднали</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/338">ООП със C#</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/339">Основи на JavaScript</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/245">ООП с JavaScript</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#qa">
                                     <a>Осигуряване на Качеството</a>
+                                    <span class="caret pull-right"></span>
                                 </div>
                                 <div id="qa" class="panel-collapse collapse">
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/290">Осигуряване на качеството част 1</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/301">Осигуряване на качеството част 2</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/308">Осигуряване на качеството част 3</a></li>
-                                    </ul>
+                                    <div class="list-group">
+                                        <a class="list-group-item" href="/Courses/Courses/Details/290">Осигуряване на качеството част 1</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/301">Осигуряване на качеството част 2</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/308">Осигуряване на качеството част 3</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#csharp-advanced">
                                     <a>Програмиране за напреднали</a>
+                                    <span class="caret pull-right"></span>
                                 </div>
                                 <div id="csharp-advanced" class="panel-collapse collapse">
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/345">Компонентно тестване със C#</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/244">Качествен програмен код със C#</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/272">Структури от данни и алгоритми</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/257">Бази от данни и SQL</a></li>
-                                    </ul>
+                                    <div class="list-group">
+                                        <a class="list-group-item" href="/Courses/Courses/Details/345">Компонентно тестване със C#</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/244">Качествен програмен код със C#</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/272">Структури от данни и алгоритми</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/257">Бази от данни и SQL</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="panel panel-default">
-                                <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#front-end">
+                                <div class="panel-heading smaller-titles" data-toggle="collapse" data-parent="#courses-navigation" href="#front-end">
                                     <a>Уеб Front-end</a>
+                                    <span class="caret pull-right"></span>
                                 </div>
                                 <div id="front-end" class="panel-collapse collapse">
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/324">Основи на HTML</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/332">CSS стилизиране</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/344">JavaScript UI и DOM</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/262">UX дизайн</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/292">Основи на Photoshop</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/294">Изграждане на Уеб front-end</a></li>
-                                    </ul>
+                                    <div class="list-group">
+                                        <a class="list-group-item" href="/Courses/Courses/Details/324">Основи на HTML</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/332">CSS стилизиране</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/344">JavaScript UI и DOM</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/262">UX дизайн</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/292">Основи на Photoshop</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/294">Изграждане на Уеб front-end</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="panel panel-default">
-                                <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#web-tech">
+                                <div class="panel-heading  smaller-titles" data-toggle="collapse" data-parent="#courses-navigation" href="#web-tech">
                                     <a>Уеб технологии</a>
+                                    <span class="caret pull-right"></span>
                                 </div>
                                 <div id="web-tech" class="panel-collapse collapse">
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/254">Приложения с JavaScript</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/275">Уеб услуги и облачни технологии</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/305">Уеб приложения с Node.js</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/299">SPA приложения с AngularJS</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/310">ASP.NET Web Forms</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/313">ASP.NET MVC</a></li>
-                                    </ul>
+                                    <div class="list-group">
+                                        <a class="list-group-item" href="/Courses/Courses/Details/254">Приложения с JavaScript</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/275">Уеб услуги и облачни технологии</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/305">Уеб приложения с Node.js</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/299">SPA приложения с AngularJS</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/310">ASP.NET Web Forms</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/313">ASP.NET MVC</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="panel panel-default">
-                                <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#mobile-tech">
+                                <div class="panel-heading smaller-titles" data-toggle="collapse" data-parent="#courses-navigation" href="#mobile-tech">
                                     <a>Мобилни технологии</a>
+                                    <span class="caret pull-right"></span>
                                 </div>
                                 <div id="mobile-tech" class="panel-collapse collapse">
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/300">Приложения за Windows</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/306">Мобилни приложения за Android</a></li>
-                                        <li class="list-group-item"><a href="/Courses/Courses/Details/311">Приложения за iPhone и iPad</a></li>
-                                        <l class="list-group-item" i><a href="/Courses/Courses/Details/316">Мултиплатформени мобилни приложения с NativeScript</a></li>
-                                    </ul>
+                                    <div class="list-group">
+                                        <a class="list-group-item" href="/Courses/Courses/Details/300">Приложения за Windows</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/306">Мобилни приложения за Android</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/311">Приложения за iPhone и iPad</a>
+                                        <a class="list-group-item" href="/Courses/Courses/Details/316">Мултиплатформени мобилни приложения с NativeScript</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -206,7 +217,7 @@
                                     </p>
                                     <div class="row btn-more-info">
                                         <div class="col-md-8 col-md-offset-2">
-                                            <a class="course-more-info btn btn-warning btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
+                                            <a class="course-more-info btn btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -231,7 +242,7 @@
                                     </p>
                                     <div class="row btn-more-info">
                                         <div class="col-md-8 col-md-offset-2">
-                                            <a class="course-more-info btn btn-warning btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
+                                            <a class="course-more-info btn btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -254,7 +265,7 @@
                                     </p>
                                     <div class="row btn-more-info">
                                         <div class="col-md-8 col-md-offset-2">
-                                            <a class="course-more-info btn btn-warning btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
+                                            <a class="course-more-info btn btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -279,7 +290,7 @@
                                     </p>
                                     <div class="row btn-more-info">
                                         <div class="col-md-8 col-md-offset-2">
-                                            <a class="course-more-info btn btn-warning btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
+                                            <a class="course-more-info btn btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
                                         </div>
                                     </div>
                                 </fieldset>
