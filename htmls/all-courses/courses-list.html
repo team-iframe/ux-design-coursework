@@ -22,6 +22,9 @@
                         <div class="col-xs-12 text-center">
                             <ul id="user-icons" class="nav navbar-nav nav-inline list-inline  pull-right">
                                 <li>
+                                    <h4 id="username">Pesho_Peshev</h4>
+                                </li>
+                                <li>
                                     <a href="#">
                                         <img src="./images/calendar.png" alt="calender">
                                     </a>
@@ -36,10 +39,14 @@
                                         <img src="./images/user.png" alt="user">
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" id="settings" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <img src="./images/engine.png" alt="settings">
                                     </a>
+                                    <div id="dropdown-settings" class="dropdown-menu text-center" area-labelledby="settings">
+                                        <a class="dropdown-header">НАСТРОЙКИ</a>
+                                        <a class="dropdown-header">ИЗХОД</a>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -58,7 +65,7 @@
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <div id="navbar-main" class="navbar-collapse collapse pull-right">
+                    <div id="navbar-main" class="navbar-collapse collapse in" aria-expanded="false">
                         <ul class="nav navbar-nav nav-inline list-inline pull-right">
                             <li>
                                 <a href="#">АКАДЕМИЯ</a>
@@ -264,8 +271,9 @@
                                             </div>
                                         </div>
                                     </legend>
-                                    <p>Задълбочете вашите знания, запознайте се в детайли популярния език C# в нашия
-                                        курс за напреднали</p>
+                                    <p>Задълбочете вашите знания, запознайте се в детайли популярния език C# в нашия курс за
+                                        напреднали
+                                    </p>
                                     <p>
                                         <strong>Срок за записване:</strong> 7 декември 23:59ч.
                                     </p>
@@ -306,7 +314,9 @@
                     <li>
                         <a href="https://plus.google.com/u/0/b/105769630299292709719/" target="_blank"><img src="./images/googleplus_512_custom_gloss_red.png" alt="googleplus-page"></a>
                     </li>
-                    <li><a href="/Rss/LatestCourses" target="_blank"><img src="./images/rssorange.png" alt="rss"></a></li>
+                    <li>
+                        <a href="/Rss/LatestCourses" target="_blank"><img src="./images/rssorange.png" alt="rss"></a>
+                    </li>
                     <li>
                         <a href="http://www.linkedin.com/groups?gid=3161033&amp;trk=hb_side_g" target="_blank"><img src="./images/square-linkedin-512.png" alt="linkedin-page"></a>
                     </li>

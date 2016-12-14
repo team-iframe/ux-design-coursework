@@ -6,7 +6,7 @@ body {
 }
 
 #account-settings {
-    margin-bottom: -1%;
+    margin-bottom: -0.8%;
 }
 
 #account-settings a {
@@ -14,9 +14,20 @@ body {
     padding-bottom: 10%;
 }
 
+#account-settings a:active {
+    background: white;
+}
+
 #navigation {
     background: #1E4B6A;
     box-shadow: 0 5px 0 #E1E1E1;
+}
+
+#username {
+    font-size: 0.9em;
+    padding-top: 3%;
+    padding-right: 7%;
+    cursor: default;
 }
 
 #account-settings li {
@@ -29,6 +40,35 @@ body {
 
 #account-settings li {
     display: inline-block;
+}
+
+#account-settings .dropdown-menu {
+    z-index: 99999;
+    top: 105%;
+    left: -191%;
+    position: absolute;
+    box-shadow: 0 3px 2px black;
+    box-sizing: border-box;
+}
+
+#account-settings .dropdown-header {
+    font-size: 1.1em;
+    cursor: pointer;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-decoration: none;
+}
+
+#account-settings .dropdown-header:hover {
+    background-color: #EEEEEE;
+}
+
+#navigation {
+    z-index: 1;
+}
+
+#navigation a:active {
+    background: #1E4B6A;
 }
 
 .navbar-header {
@@ -114,6 +154,7 @@ body {
     border-radius: 0;
     cursor: pointer;
     padding: 3%;
+    height: 60px;
 }
 
 #courses-navigation > div {
@@ -177,7 +218,7 @@ body {
 
 .course-container fieldset {
     border: 3px solid #518BAF;
-    padding: 0 5% 3% 5%;
+    padding: 0 5% 1% 5%;
     height: 100%;
 }
 
@@ -240,17 +281,30 @@ body {
         margin-left: 0;
         margin-right: 0;
     }
+    #dropdown-settings {
+        background: white;
+        border: 1px solid lightgray;
+        box-shadow: 0 3px 2px black;
+        box-sizing: border-box;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
-    #side-menu > ul > li {
-        display: inline-block;
-        width: 30%;
+    #courses-navigation {
+        margin-top: 0;
     }
-    #side-menu > ul > li > a {
-        display: inline-block;
-        height: 100%;
-        padding-left: 0;
-        padding-right: 0;
+    #side-menu .panel-heading {
+        text-align: center;
+        width: 100%;
+        padding: 1%;
+        height: 10%;
+        font-size: 1.3em;
+    }
+    #side-menu .panel.panel-default {
+        margin-bottom: 1%;
+    }
+    #navbar-main a {
+        padding-left: 3%;
+        padding-right: 3%;
     }
 }
