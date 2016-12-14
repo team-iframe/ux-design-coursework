@@ -1,10 +1,22 @@
 body {
+    margin: 0;
+    padding: 0;
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #account-settings {
-    margin-bottom: 0;
+    margin-bottom: -1%;
+}
+
+#account-settings a {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+#navigation {
+    background: #1E4B6A;
+    box-shadow: 0 5px 0 #E1E1E1;
 }
 
 #account-settings li {
@@ -12,7 +24,7 @@ body {
 }
 
 #account-settings img {
-    max-width: 50%;
+    max-width: 25px;
 }
 
 #account-settings li {
@@ -25,31 +37,29 @@ body {
 
 #navbar-main {
     font-size: 1.2em;
-    width: 85%;
-    padding: 0;
+}
+
+#navbar-main form {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#navbar-main input {
+    border-radius: 0;
 }
 
 #navbar-main a {
-    color: black;
-}
-
-ul.main-navbar-items {
-    padding: 0;
-}
-
-.main-navbar-items {
-    list-style-type: none;
-    width: 100%;
-}
-
-.main-navbar-items li {
-    display: inline-block;
-    margin-left: 5%;
+    color: white;
 }
 
 #navbar-main > ul > li:hover > a {
-    color: #ff5e56;
+    color: white;
     text-decoration: underline;
+}
+
+#navbar-main > ul > li > a:hover {
+    background: transparent;
+    background-color: transparent;
 }
 
 .navbar-brand {
@@ -58,11 +68,6 @@ ul.main-navbar-items {
 
 .navbar-brand img {
     max-width: 100%;
-}
-
-#courses-navigation {
-    padding: 0;
-    margin: 0;
 }
 
 #side-menu {
@@ -75,7 +80,7 @@ ul.main-navbar-items {
 
 #footer {
     font-size: 0.8em;
-    background: #FF5E56;
+    background: #1E4B6A;
     color: white;
 }
 
@@ -91,27 +96,42 @@ ul.main-navbar-items {
     padding-bottom: 5%;
 }
 
+#side-menu {
+    padding: 0;
+}
+
 #courses-navigation {
-    padding-top: 8%;
+    margin-top: 70%;
 }
 
-#courses-navigation > li {
-    margin-bottom: 5%;
-    list-style: none;
-}
-
-#courses-navigation > li > a {
-    padding: 10%;
-    list-style: none;
-    background: #518baf;
-    white-space: normal;
-    border-radius: 0;
+#courses-navigation > .panel {
     border: none;
 }
 
-fieldset {
-    border: 3px solid #518BAF;
-    padding: 0 5% 5% 5%;
+#courses-navigation .panel-heading {
+    background: #518BB0;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    padding: 3%;
+}
+
+#courses-navigation > div {
+    margin-bottom: 5%;
+}
+
+#courses-navigation a {
+    color: white;
+    text-decoration: none;
+}
+
+#courses-navigation .list-group-item {
+    background: #80AAC3;
+}
+
+.courses-heading {
+    color: #1D4A69;
+    margin-bottom: 5%;
 }
 
 .course-title .row > div {
@@ -119,12 +139,30 @@ fieldset {
 }
 
 .course-title {
-    color: #518BAF;
+    color: black;
     border-bottom: none;
     display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
     padding-left: 5%;
     padding-right: 5%;
-    max-width: 80%
+    width: inherit;
+}
+
+#course-csharp .course-title {
+    width: 60%;
+}
+
+#course-css .course-title {
+    width: 50%;
+}
+
+#course-angular .course-title {
+    width: 50%;
+}
+
+#course-typescript .course-title {
+    width: 70%;
 }
 
 .course-title img {
@@ -132,25 +170,39 @@ fieldset {
 }
 
 .course-container {
-    color: #518BAF;
-    padding: 0 0 5% 5%;
+    color: black;
+    padding: 0 0 5% 4%;
+    height: 1005;
+}
+
+.course-container fieldset {
+    border: 3px solid #518BAF;
+    padding: 0 5% 3% 5%;
+    height: 100%;
 }
 
 .course-container p {
-    padding: 0 3% 5% 3%;
+    padding: 0 3% 1% 3%;
 }
 
 .course-more-info {
-    background: #E14209;
+    background: #51B764;
     border: none;
     border-radius: 0;
+    text-transform: uppercase;
+    padding: 4% 0;
+}
+
+.course-more-info:hover {
+    background: #51B764;
 }
 
 .btn-more-info {
     margin-bottom: 3%;
 }
 
-#account-settings .navbar-nav {
+
+/*#account-settings .navbar-nav {
     width: 100%;
     text-align: center;
 }
@@ -158,10 +210,10 @@ fieldset {
 #account-settings .navbar-nav > li {
     float: none;
     display: inline-block;
-}
+}*/
 
 .icon-bar {
-    background: black;
+    background: white;
 }
 
 .navbar-collapse.in {
@@ -173,32 +225,8 @@ fieldset {
 }
 
 #social-networks img {
-    max-height: 40px;
-}
-
-#footer {
-    padding-bottom: 0;
-}
-
-@media only screen and (max-width: 1200px) {
-    .main-navbar-items li {
-        display: inline-block;
-        font-size: 1em;
-    }
-}
-
-@media only screen and (max-width: 1000px) {
-    .main-navbar-items li {
-        display: inline-block;
-        font-size: 0.9em;
-        margin-left: 3%;
-    }
-    .main-navbar-items li:last-child {
-        width: 20%;
-    }
-    .main-navbar-items li:first-child {
-        margin-left: 5%;
-    }
+    padding: 0 1%;
+    max-height: 35px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -206,39 +234,20 @@ fieldset {
         width: 100%;
         display: block;
     }
-
     #navbar-main {
         width: 100%;
         display: block;
-        margin-left:0;
+        margin-left: 0;
         margin-right: 0;
-    }
-
-
-    .main-navbar-items li {
-        text-align: center;
-        display: block;
-        font-size: 0.9em;
-        padding-bottom: 2%;
-    }
-
-    .main-navbar-items li:last-child {
-        width: 90%;
-    }
-
-    .main-navbar-items form {
-        margin-left: auto;
     }
 }
 
-
 @media only screen and (max-width: 1000px) {
-    #side-menu > ul > li{
+    #side-menu > ul > li {
         display: inline-block;
         width: 30%;
     }
-
-    #side-menu > ul > li > a{
+    #side-menu > ul > li > a {
         display: inline-block;
         height: 100%;
         padding-left: 0;
