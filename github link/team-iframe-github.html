@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Telerik Academy, Академия на Телерик" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./lib/js/jquery.min.js"></script>
+    <script src="./lib/js/bootstrap.min.js"></script>
+    </hbody>
+    <div id="root">
+        <header>
+            <nav id="account-settings" class="navbar navbar-static-top nav-inline">
+                <div class="container text-center center">
+                    <div id="account-buttons" class="row">
+                        <div class="col-xs-12 text-center">
+                            <ul id="user-icons" class="nav navbar-nav nav-inline list-inline pull-right">
+                                <li>
+                                    <h4 id="username">Team_iframe</h4>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/calendar.png" alt="calender">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/email 1.png" alt="messages">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="user">
+                                        <img src="./images/user.png" alt="user">
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" id="settings" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <img src="./images/engine.png" alt="settings">
+                                    </a>
+                                    <div id="dropdown-settings" class="dropdown-menu text-center" area-labelledby="settings">
+                                        <a class="dropdown-header">НАСТРОЙКИ</a>
+                                        <a onclick="(() => { $('#login-register').show(); $('#account-buttons').hide() })()" class="dropdown-header">ИЗХОД</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <nav id="navigation" class="navbar navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="#">
+                            <img id="telerik-logo" src="./images/telerik-academy-logo-nav.png" alt="telerik-academy">
+                        </a>
+                        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar-main" class="navbar-collapse collapse" aria-expanded="false" style="height: 0">
+                        <ul class="nav navbar-nav nav-inline list-inline pull-right">
+                            <li>
+                                <a href="#">АКАДЕМИЯ</a>
+                            </li>
+                            <li>
+                                <a id="courses-btn" href="#">КУРСОВЕ</a>
+                            </li>
+                            <li>
+                                <a href="#">ФОРУМ</a>
+                            </li>
+                            <li>
+                                <a href="#">ПОМОЩ</a>
+                            </li>
+                            <li id="btn-search" data-target="#search-bar-input" data-toggle="collapse">
+                                <a href="#"><img src="./images/search-icon.jpg" alt="search"></a>
+                            </li>
+                            <li>
+                                <div id="search-bar-input" class="collapse">
+                                    <form class="navbar-form" role="search">
+                                        <input id="search" type="text" class="form-control" placeholder="Search..." name="search">
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container team-iframe">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <h1 class="team-name">Team iframe</h1>
+                        <h2><a href="https://github.com/team-iframe/ux-design-coursework">Visit to our github repo -></a></h2>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer" class="footer panel-footer text-center">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-5">
+                        <div>Всички права запазени © Telerik Academy 2012-2016</div>
+                        <div><a href="/Home/About">Telerik Academy Learning System 5.7 (build 20160514.1dfa2d3)</a></div>
+                        <div><a href="#">Правила и условия</a></div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="./images/telerik-academy-logo-nav.png" alt="telerik-academy">
+                    </div>
+                    <div id="social-networks" class="col-md-3 text-right">
+                        <ul>
+                            <li>
+                                <a href="http://www.facebook.com/TelerikAcademy" target="_blank"><img src="./images/square-facebook-512.png" alt="facebook-page"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.youtube.com/user/TelerikAcademy" target="_blank"><img src="./images/youtube-square-social-media-512.png" alt="youtube-page"></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/#!/TelerikAcademy" target="_blank"><img src="./images/twitter-square-icon_321295.png" alt="twitter-page"></a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/u/0/b/105769630299292709719/" target="_blank"><img src="./images/googleplus_512_custom_gloss_red.png" alt="googleplus-page"></a>
+                            </li>
+                            <li>
+                                <a href="/Rss/LatestCourses" target="_blank"><img src="./images/rssorange.png" alt="rss"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.linkedin.com/groups?gid=3161033&amp;trk=hb_side_g" target="_blank"><img src="./images/square-linkedin-512.png" alt="linkedin-page"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </body>
+
+</html>

@@ -1,0 +1,296 @@
+@font-face {
+    font-family: Roboto;
+    src: url('../lib/fonts/Roboto-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Roboto;
+}
+
+#account-settings {
+    padding-top: 0.1%;
+    margin-bottom: 0;
+}
+
+#account-settings a:active {
+    background: white;
+}
+
+#username {
+    font-size: 2rem;
+    cursor: default;
+    padding-top: 15%;
+}
+
+
+.loging-reg-btns {
+    color: black;
+    display: inline-block;
+    font-size: 2rem;
+}
+
+#account-settings li {
+    padding: 0;
+}
+
+#account-settings img {
+    max-width: 40px;
+}
+
+#account-settings li {
+    display: inline-block;
+}
+
+#account-settings .dropdown-menu {
+    z-index: 99999;
+    top: 105%;
+    left: -130%;
+    position: absolute;
+    box-shadow: 0 3px 2px black;
+    box-sizing: border-box;
+}
+
+#account-settings .dropdown-header {
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-decoration: none;
+    color: black;
+}
+
+#account-settings .dropdown-header:hover {
+    background-color: #EEEEEE;
+}
+
+#navigation {
+    z-index: 1;
+    background: #1E4B6A;
+    box-shadow: 0 8px 0 #E1E1E1;
+}
+
+#navigation a:active {
+    background: #1E4B6A;
+}
+
+#navbar-main {
+    font-size: 2rem;
+}
+
+#navbar-main form {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#navbar-main input {
+    border-radius: 0;
+}
+
+#navbar-main a {
+    color: white;
+}
+
+#navbar-main>ul>li:hover>a {
+    color: white;
+    text-decoration: underline;
+}
+
+#navbar-main>ul>li {
+    padding-top: 1.8%;
+}
+
+#navbar-main>ul>li#btn-search {
+    padding: 0 0;
+}
+
+#btn-search *,
+#btn-search {
+    padding: 0;
+}
+
+#navbar-main a:hover,
+#navbar-main a:active,
+#navbar-main a:focus {
+    background: transparent;
+    background-color: transparent;
+}
+
+#navbar-main form {
+    border: none;
+    box-shadow: none;
+}
+
+#telerik-logo,
+#btn-search img {
+    padding: 0;
+    max-height: 73px;
+}
+
+#social-networks li {
+    display: inline;
+}
+
+#footer {
+    font-size: 1.6rem;
+    background: #1E4B6A;
+    color: white;
+}
+
+#footer a {
+    color: white;
+}
+
+#footer img {
+    max-width: 55%;
+}
+
+#main {
+    padding-bottom: 5%;
+}
+
+#side-menu {
+    padding: 0 0 0 10px;
+}
+
+#courses-navigation span {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid white;
+}
+
+#courses-navigation {
+    margin-top: 86%;
+}
+
+#courses-navigation>.panel {
+    border: none;
+}
+
+#courses-navigation .panel-heading {
+    background: #518BB0;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    padding: 3%;
+    height: 60px;
+    position: relative;
+}
+
+#courses-navigation>div {
+    margin-bottom: 5%;
+}
+
+#courses-navigation .panel-heading.smaller-titles a {
+    position: absolute;
+    top: 30%;
+    display: inline;
+}
+
+#courses-navigation .panel-heading span {
+    position: absolute;
+    top: 45%;
+    right: 5%;
+}
+
+#courses-navigation a {
+    color: white;
+    text-decoration: none;
+}
+
+#courses-navigation .list-group-item {
+    background: #80AAC3;
+}
+
+#courses-heading h1 {
+    font-size: 6rem;
+    color: #1D4A69;
+    padding-top: 2%;
+    margin-bottom: 5%;
+}
+
+.course-title .row>div {
+    padding: 0;
+    display: inline-block;
+}
+
+.course-title {
+    color: black;
+    border-bottom: none;
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: bold;
+    padding-left: 3%;
+    padding-right: 0;
+    width: inherit;
+}
+
+#course-csharp .course-title {
+    width: 60%;
+}
+
+
+
+.course-more-info:hover,
+.course-more-info:active,
+.course-more-info:focus {
+    background: #D9481B;
+    color: white;
+}
+
+.btn-more-info {
+    margin-bottom: 3%;
+}
+
+.row.btn-more-info>div {
+    padding: 0 7.5%;
+}
+
+.btn-more-info a {
+    padding-top: 5.2%;
+    padding-bottom: 5.2%;
+}
+
+.icon-bar {
+    background: white;
+}
+
+.navbar-header button {
+    padding-top: 20px;
+}
+
+.navbar-collapse.in {
+    overflow: hidden;
+}
+
+.navbar-collapse {
+    overflow: hidden;
+}
+
+#social-networks ul {
+    padding: 7% 0;
+}
+
+#social-networks img {
+    padding: 0 1%;
+    max-height: 35px;
+}
+
+
+#account-settings img {
+    max-width: 30px;
+}
+
+#username {
+    font-size: 1.5rem;
+}
+
+.team-iframe {
+    height: 1000px;
+}
+
+.team-name{
+    font-size: 4em;
+}
