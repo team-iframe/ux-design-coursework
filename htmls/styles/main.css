@@ -1,33 +1,38 @@
+@font-face {
+    font-family: Roboto;
+    src: url('../lib/fonts/Roboto-Regular.ttf');
+}
+
 body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Roboto;
 }
 
 #account-settings {
-    margin-bottom: -0.8%;
-}
-
-#account-settings a {
-    padding-top: 10%;
-    padding-bottom: 10%;
+    padding-top: 0.1%;
+    margin-bottom: 0;
 }
 
 #account-settings a:active {
     background: white;
 }
 
-#navigation {
-    background: #1E4B6A;
-    box-shadow: 0 5px 0 #E1E1E1;
+#username {
+    font-size: 2rem;
+    cursor: default;
+    padding-top: 15%;
 }
 
-#username {
-    font-size: 0.9em;
-    padding-top: 3%;
-    padding-right: 7%;
-    cursor: default;
+#account-buttons {
+    display: none;
+}
+
+.loging-reg-btns {
+    color: black;
+    display: inline-block;
+    font-size: 2rem;
 }
 
 #account-settings li {
@@ -35,7 +40,7 @@ body {
 }
 
 #account-settings img {
-    max-width: 25px;
+    max-width: 40px;
 }
 
 #account-settings li {
@@ -45,18 +50,19 @@ body {
 #account-settings .dropdown-menu {
     z-index: 99999;
     top: 105%;
-    left: -191%;
+    left: -130%;
     position: absolute;
     box-shadow: 0 3px 2px black;
     box-sizing: border-box;
 }
 
 #account-settings .dropdown-header {
-    font-size: 1.1em;
+    font-size: 1.7rem;
     cursor: pointer;
     padding-top: 5%;
     padding-bottom: 5%;
     text-decoration: none;
+    color: black;
 }
 
 #account-settings .dropdown-header:hover {
@@ -65,18 +71,16 @@ body {
 
 #navigation {
     z-index: 1;
+    background: #1E4B6A;
+    box-shadow: 0 8px 0 #E1E1E1;
 }
 
 #navigation a:active {
     background: #1E4B6A;
 }
 
-.navbar-header {
-    width: 15%;
-}
-
 #navbar-main {
-    font-size: 1.2em;
+    font-size: 2rem;
 }
 
 #navbar-main form {
@@ -97,6 +101,22 @@ body {
     text-decoration: underline;
 }
 
+#navbar-main > ul > li {
+    padding-top: 1.8%;
+}
+
+#navbar-main > ul > li#btn-search {
+    padding: 0 0;
+}
+
+#courses-btn {
+    text-decoration: underline;
+}
+
+#btn-search *, #btn-search {
+    padding: 0;
+}
+
 #navbar-main a:hover, #navbar-main a:active, #navbar-main a:focus {
     background: transparent;
     background-color: transparent;
@@ -107,12 +127,9 @@ body {
     box-shadow: none;
 }
 
-.navbar-brand {
+#telerik-logo, #btn-search img {
     padding: 0;
-}
-
-.navbar-brand img {
-    max-width: 100%;
+    max-height: 73px;
 }
 
 #social-networks li {
@@ -120,7 +137,7 @@ body {
 }
 
 #footer {
-    font-size: 0.8em;
+    font-size: 1.6rem;
     background: #1E4B6A;
     color: white;
 }
@@ -138,7 +155,7 @@ body {
 }
 
 #side-menu {
-    padding: 0;
+    padding: 0 0 0 10px;
 }
 
 #courses-navigation span {
@@ -148,7 +165,7 @@ body {
 }
 
 #courses-navigation {
-    margin-top: 70%;
+    margin-top: 86%;
 }
 
 #courses-navigation > .panel {
@@ -190,23 +207,26 @@ body {
     background: #80AAC3;
 }
 
-.courses-heading {
+#courses-heading h1 {
+    font-size: 6rem;
     color: #1D4A69;
+    padding-top: 2%;
     margin-bottom: 5%;
 }
 
 .course-title .row > div {
     padding: 0;
+    display: inline-block;
 }
 
 .course-title {
     color: black;
     border-bottom: none;
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 3%;
+    padding-right: 0;
     width: inherit;
 }
 
@@ -215,11 +235,11 @@ body {
 }
 
 #course-css .course-title {
-    width: 50%;
+    width: 45%;
 }
 
 #course-angular .course-title {
-    width: 50%;
+    width: 45%;
 }
 
 #course-typescript .course-title {
@@ -247,16 +267,17 @@ body {
 }
 
 .course-more-info {
-    background: #51B764;
+    background: #D9481B;
     color: white;
     border: none;
     border-radius: 0;
     text-transform: uppercase;
     padding: 4% 0;
+    font-weight: bold;
 }
 
 .course-more-info:hover, .course-more-info:active, .course-more-info:focus {
-    background: #51B764;
+    background: #D9481B;
     color: white;
 }
 
@@ -264,19 +285,21 @@ body {
     margin-bottom: 3%;
 }
 
-
-/*#account-settings .navbar-nav {
-    width: 100%;
-    text-align: center;
+.row.btn-more-info > div {
+    padding: 0 7.5%;
 }
 
-#account-settings .navbar-nav > li {
-    float: none;
-    display: inline-block;
-}*/
+.btn-more-info a {
+    padding-top: 5.2%;
+    padding-bottom: 5.2%;
+}
 
 .icon-bar {
     background: white;
+}
+
+.navbar-header button {
+    padding-top: 20px;
 }
 
 .navbar-collapse.in {
@@ -287,14 +310,77 @@ body {
     overflow: hidden;
 }
 
+#social-networks ul {
+    padding: 7% 0;
+}
+
 #social-networks img {
     padding: 0 1%;
     max-height: 35px;
 }
 
+@media only screen and (max-width: 1306px) {
+    body {
+        font-size: 15;
+    }
+    #social-networks img {
+        max-height: 30px;
+    }
+}
+
+@media only screen and (max-width: 1292px) {
+    .container {
+        max-width: 1140px;
+    }
+    #course-csharp .course-title {
+        width: 67%;
+    }
+    #course-css .course-title {
+        width: 50%;
+    }
+    #course-angular .course-title {
+        width: 50%;
+    }
+    #course-typescript .course-title {
+        width: 75%;
+    }
+}
+
 @media only screen and (max-width: 1200px) {
     #courses-navigation .panel-heading.smaller-titles a {
         position: static;
+    }
+    #social-networks img {
+        padding: 0 0.8%;
+        width: 26px;
+    }
+    body {
+        font-size: 14;
+    }
+    #btn-search img {
+        width: 68px;
+    }
+    #navbar-main {
+        font-size: 1.8rem;
+    }
+    #navbar-main a {
+        padding-left: 4%;
+        padding-right: 2%;
+    }
+    #course-title {
+        font-size: 2rem;
+    }
+    #course-csharp .course-title {
+        width: 77%;
+    }
+    #course-css .course-title {
+        width: 60%;
+    }
+    #course-angular .course-title {
+        width: 60%;
+    }
+    #course-typescript .course-title {
+        width: 90%;
     }
 }
 
@@ -316,8 +402,23 @@ body {
         padding-left: 3%;
         padding-right: 3%;
     }
+
     #social-networks img {
-        padding: 0 0.8%;
+        display: inline-block;
+    }
+    #social-networks {
+        text-align: center;
+    }
+    #social-networks ul {
+        padding: 0;
+    }
+    #social-networks img {     
+        max-height: 50px;
+        max-width: 50px;
+        height: 50px;
+        width: 50px;
+        padding: 0;
+        margin-left: 3%;
     }
     #side-menu span {
         display: none;
@@ -337,6 +438,7 @@ body {
     #side-menu span {
         display: inline;
     }
+    
 }
 
 @media only screen and (max-width: 768px) {
@@ -349,11 +451,28 @@ body {
         display: block;
         margin-left: 0;
         margin-right: 0;
+        text-align: right;
     }
     #dropdown-settings {
         background: white;
         border: 1px solid lightgray;
         box-shadow: 0 3px 2px black;
         box-sizing: border-box;
+    }
+    #search-bar-input {
+        visibility: visible;
+        display: inline-block;
+    }
+    .navbar-collapse.collapse.in img, .navbar-collapse.collapsing img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #account-settings img {
+        max-width: 30px;
+    }
+    #username {
+        font-size: 1.5rem;
     }
 }

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Telerik Academy, Академия на Телерик" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+
+    <script src="./lib/js/jquery.min.js"></script>
+    <script src="./lib/js/bootstrap.min.js"></script>
+    </hbody>
+    <div id="root">
+        <header>
+            <nav id="account-settings" class="navbar navbar-static-top nav-inline">
+                <div class="container text-center center">
+                    <div id="login-register" class="row">
+                        <div class="col-xs-12 text-center">
+                            <ul class="nav navbar-nav nav-inline list-inline pull-right">
+                                <li>
+                                    <a href="#" onclick="(() => { $('#login-register').hide(); $('#account-buttons').show() })()">
+<h4 class="loging-reg-btns">ВХОД</h4>
+</a>
+</li>
+<li>
+    <a href="#" onclick="(() => { $('#login-register').hide(); $('#account-buttons').show() })()">
+<h4 class="loging-reg-btns">РЕГИСТРАЦИЯ</h4>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="account-buttons" class="row">
+    <div class="col-xs-12 text-center">
+        <ul id="user-icons" class="nav navbar-nav nav-inline list-inline pull-right">
+            <li>
+                <h4 id="username">Pesho_Peshev</h4>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/calendar.png" alt="calender">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/email 1.png" alt="messages">
+                </a>
+            </li>
+            <li>
+                <a href="#" id="user">
+                    <img src="./images/user.png" alt="user">
+                </a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" id="settings" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img src="./images/engine.png" alt="settings">
+                </a>
+                <div id="dropdown-settings" class="dropdown-menu text-center" area-labelledby="settings">
+                    <a class="dropdown-header">НАСТРОЙКИ</a>
+                    <a onclick="(() => { $('#login-register').show(); $('#account-buttons').hide() })()" class="dropdown-header">ИЗХОД</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<nav id="navigation" class="navbar navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#">
+                <img id="telerik-logo" src="./images/telerik-academy-logo-nav.png" alt="telerik-academy">
+            </a>
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+        </div>
+        <div id="navbar-main" class="navbar-collapse collapse" aria-expanded="false" style="height: 0">
+<ul class="nav navbar-nav nav-inline list-inline pull-right">
+    <li>
+        <a href="#">АКАДЕМИЯ</a>
+    </li>
+    <li>
+        <a id="courses-btn" href="#">КУРСОВЕ</a>
+    </li>
+    <li>
+        <a href="#">ФОРУМ</a>
+    </li>
+    <li>
+        <a href="#">ПОМОЩ</a>
+    </li>
+    <li id="btn-search" data-target="#search-bar-input" data-toggle="collapse">
+        <a href="#"><img src="./images/search-icon.jpg" alt="search"></a>
+    </li>
+    <li>
+        <div id="search-bar-input" class="collapse">
+            <form class="navbar-form" role="search">
+                <input id="search" type="text" class="form-control" placeholder="Search..." name="search">
+            </form>
+        </div>
+    </li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<div class="container">
+    <main id="main">
+        <div class="row">
+            <nav id="side-menu" class="col-md-2">
+                <div class="panel-group" id="courses-navigation">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#csharp-fundamentals">
+                            <a>Основи на програмирането</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="csharp-fundamentals" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/323">Основи на C#</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/331">C# за напреднали</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/338">ООП със C#</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/339">Основи на JavaScript</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/245">ООП с JavaScript</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#qa">
+                            <a>Осигуряване на Качеството</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="qa" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/290">Осигуряване на качеството част 1</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/301">Осигуряване на качеството част 2</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/308">Осигуряване на качеството част 3</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#csharp-advanced">
+                            <a>Програмиране за напреднали</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="csharp-advanced" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/345">Компонентно тестване със C#</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/244">Качествен програмен код със C#</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/272">Структури от данни и алгоритми</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/257">Бази от данни и SQL</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading smaller-titles" data-toggle="collapse" data-parent="#courses-navigation" href="#front-end">
+                            <a>Уеб Front-end</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="front-end" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/324">Основи на HTML</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/332">CSS стилизиране</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/344">JavaScript UI и DOM</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/262">UX дизайн</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/292">Основи на Photoshop</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/294">Изграждане на Уеб front-end</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading  smaller-titles" data-toggle="collapse" data-parent="#courses-navigation" href="#web-tech">
+                            <a>Уеб технологии</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="web-tech" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/254">Приложения с JavaScript</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/275">Уеб услуги и облачни технологии</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/305">Уеб приложения с Node.js</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/299">SPA приложения с AngularJS</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/310">ASP.NET Web Forms</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/313">ASP.NET MVC</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading smaller-titles" data-toggle="collapse" data-parent="#courses-navigation" href="#mobile-tech">
+                            <a>Мобилни технологии</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="mobile-tech" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/300">Приложения за Windows</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/306">Мобилни приложения за Android</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/311">Приложения за iPhone и iPad</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/316">Мултиплатформени мобилни приложения с NativeScript</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!--TODO Icons-->
+            <section class="col-md-10">
+                <div class="row text-center" id="courses-heading">
+                    <h1>Текущи Курсове</h1>
+                </div>
+                <div class="row-eq-height">
+                    <div id="course-angular" class="course-container col-md-6 text-center">
+                        <fieldset>
+                            <legend class="course-title">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="./images/Angular_full_color_logo.svg.png" alt="angular2-logo">
+                                    </div>
+                                    <div class="col-md-9 title-name text-left">
+                                        <strong>Angular 2</strong>
+                                    </div>
+                                </div>
+                            </legend>
+                            <p>На 7 декември в "Академията на Телерик" стартира първият в България безплатен курс по новия Angular
+                                2
+                            </p>
+                            <p>
+                                <strong>Срок за записване:</strong> 7 декември 23:59ч.
+                            </p>
+                            <div class="row btn-more-info">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <a class="course-more-info btn btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div id="course-css" class="course-container col-md-6 text-center">
+                        <fieldset>
+                            <legend class="course-title">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="./images/preview-css3logo.png" alt="angular2-logo">
+                                    </div>
+                                    <div class="col-md-9 title-name text-left">
+                                        <strong>CSS Intro</strong>
+                                    </div>
+                                </div>
+                            </legend>
+                            <p>След HTML идва ред на стилизиране на страниците със CSS - основна част на изграждането на един
+                                уебсайт
+                            </p>
+                            <p>
+                                <strong>Срок за записване:</strong> 7 декември 23:59ч.
+                            </p>
+                            <div class="row btn-more-info">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <a class="course-more-info btn btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div id="course-typescript" class="course-container col-md-6 text-center">
+                        <fieldset>
+                            <legend class="course-title">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="./images/ts.png" alt="angular2-logo">
+                                    </div>
+                                    <div class="col-md-9 title-name text-left">
+                                        <strong>Typescript OOP</strong>
+                                    </div>
+                                </div>
+                            </legend>
+                            <p>Запознайте се с принципите на обекто-ориентираното програмиране в контекста на Typescript</p>
+                            <p>
+                                <strong>Срок за записване:</strong> 7 декември 23:59ч.
+                            </p>
+                            <div class="row btn-more-info">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <a class="course-more-info btn btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div id="course-csharp" class="course-container col-md-6 text-center">
+                        <fieldset>
+                            <legend class="course-title">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="./images/2p4i.png" alt="csharp-logo">
+                                    </div>
+                                    <div class="col-md-9 title-nam text-left">
+                                        <strong>C# Advanced</strong>
+                                    </div>
+                                </div>
+                            </legend>
+                            <p>Задълбочете вашите знания, запознайте се в детайли популярния език C# в нашия курс за напреднали
+                            </p>
+                            <p>
+                                <strong>Срок за записване:</strong> 7 декември 23:59ч.
+                            </p>
+                            <div class="row btn-more-info">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <a class="course-more-info btn btn-block" href="/Courses/Courses/Details/299">Повече информация</a>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+        </div>
+        </section>
+</div>
+</main>
+</div>
+<footer id="footer" class="footer panel-footer text-center">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-5">
+                <div>Всички права запазени © Telerik Academy 2012-2016</div>
+                <div><a href="/Home/About">Telerik Academy Learning System 5.7 (build 20160514.1dfa2d3)</a></div>
+                <div><a href="#">Правила и условия</a></div>
+            </div>
+            <div class="col-md-4">
+                <img src="./images/telerik-academy-logo-nav.png" alt="telerik-academy">
+            </div>
+            <div id="social-networks" class="col-md-3 text-right">
+                <ul>
+                    <li>
+                        <a href="http://www.facebook.com/TelerikAcademy" target="_blank"><img src="./images/square-facebook-512.png" alt="facebook-page"></a>
+                    </li>
+                    <li>
+                        <a href="http://www.youtube.com/user/TelerikAcademy" target="_blank"><img src="./images/youtube-square-social-media-512.png" alt="youtube-page"></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/#!/TelerikAcademy" target="_blank"><img src="./images/twitter-square-icon_321295.png" alt="twitter-page"></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/b/105769630299292709719/" target="_blank"><img src="./images/googleplus_512_custom_gloss_red.png" alt="googleplus-page"></a>
+                    </li>
+                    <li>
+                        <a href="/Rss/LatestCourses" target="_blank"><img src="./images/rssorange.png" alt="rss"></a>
+                    </li>
+                    <li>
+                        <a href="http://www.linkedin.com/groups?gid=3161033&amp;trk=hb_side_g" target="_blank"><img src="./images/square-linkedin-512.png" alt="linkedin-page"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+
+</html>
