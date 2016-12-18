@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Telerik Academy, Академия на Телерик" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telerik Academy</title>    
+    <link rel="icon" href="./icons/telerik-logo.ico"/>
+    <link rel="stylesheet" href="./lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+
+    <script src="./lib/js/jquery.min.js"></script>
+    <script src="./lib/js/bootstrap.min.js"></script>
+    </hbody>
+    <div id="root">
+        <header>
+            <nav id="account-settings" class="navbar navbar-static-top nav-inline">
+                <div class="container text-center center">
+                    <div id="login-register" class="row">
+                        <div class="col-xs-12 text-center">
+                            <ul class="nav navbar-nav nav-inline list-inline pull-right">
+                                <li>
+                                    <a href="#" onclick="(() => { $('#login-register').hide(); $('#account-buttons').show() })()">
+<h4 class="loging-reg-btns">ВХОД</h4>
+</a>
+</li>
+<li>
+    <a href="#" onclick="(() => { $('#login-register').hide(); $('#account-buttons').show() })()">
+<h4 class="loging-reg-btns">РЕГИСТРАЦИЯ</h4>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="account-buttons" class="row">
+    <div class="col-xs-12 text-center">
+        <ul id="user-icons" class="nav navbar-nav nav-inline list-inline pull-right">
+            <li>
+                <h4 id="username">Pesho_Peshev</h4>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/calendar.png" alt="calender">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/email 1.png" alt="messages">
+                </a>
+            </li>
+            <li>
+                <a href="#" id="user">
+                    <img src="./images/user.png" alt="user">
+                </a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" id="settings" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img src="./images/engine.png" alt="settings">
+                </a>
+                <div id="dropdown-settings" class="dropdown-menu text-center" area-labelledby="settings">
+                    <a class="dropdown-header">НАСТРОЙКИ</a>
+                    <a onclick="(() => { $('#login-register').show(); $('#account-buttons').hide() })()" class="dropdown-header">ИЗХОД</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<nav id="navigation" class="navbar navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#">
+                <img id="telerik-logo" src="./images/telerik-academy-logo-nav.png" alt="telerik-academy">
+            </a>
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+        </div>
+        <div id="navbar-main" class="navbar-collapse collapse" aria-expanded="false" style="height: 0">
+<ul class="nav navbar-nav nav-inline list-inline pull-right">
+    <li>
+        <a href="#">АКАДЕМИЯ</a>
+    </li>
+    <li>
+        <a id="courses-btn" href="#">КУРСОВЕ</a>
+    </li>
+    <li>
+        <a href="#">ФОРУМ</a>
+    </li>
+    <li>
+        <a href="#">ПОМОЩ</a>
+    </li>
+    <li id="btn-search" data-target="#search-bar-input" data-toggle="collapse">
+        <a href="#"><img src="./images/search-icon.jpg" alt="search"></a>
+    </li>
+    <li>
+        <div id="search-bar-input" class="collapse">
+            <form class="navbar-form" role="search">
+                <input id="search" type="text" class="form-control" placeholder="Search..." name="search">
+            </form>
+        </div>
+    </li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<div class="container">
+    <main id="main">
+        <div class="row">
+            <nav id="side-menu" class="col-md-2">
+                <div class="panel-group" id="courses-navigation">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#csharp-fundamentals">
+                            <a>Основи на програмирането</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="csharp-fundamentals" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/323">Основи на C#</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/331">C# за напреднали</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/338">ООП със C#</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/339">Основи на JavaScript</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/245">ООП с JavaScript</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#qa">
+                            <a>Осигуряване на Качеството</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="qa" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/290">Осигуряване на качеството част 1</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/301">Осигуряване на качеството част 2</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/308">Осигуряване на качеството част 3</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#courses-navigation" href="#csharp-advanced">
+                            <a>Програмиране за напреднали</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="csharp-advanced" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/345">Компонентно тестване със C#</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/244">Качествен програмен код със C#</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/272">Структури от данни и алгоритми</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/257">Бази от данни и SQL</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading smaller-titles" data-toggle="collapse" data-parent="#courses-navigation" href="#front-end">
+                            <a>Уеб Front-end</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="front-end" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/324">Основи на HTML</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/332">CSS стилизиране</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/344">JavaScript UI и DOM</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/262">UX дизайн</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/292">Основи на Photoshop</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/294">Изграждане на Уеб front-end</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading  smaller-titles" data-toggle="collapse" data-parent="#courses-navigation" href="#web-tech">
+                            <a>Уеб технологии</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="web-tech" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/254">Приложения с JavaScript</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/275">Уеб услуги и облачни технологии</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/305">Уеб приложения с Node.js</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/299">SPA приложения с AngularJS</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/310">ASP.NET Web Forms</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/313">ASP.NET MVC</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading smaller-titles" data-toggle="collapse" data-parent="#courses-navigation" href="#mobile-tech">
+                            <a>Мобилни технологии</a>
+                            <span class="caret pull-right"></span>
+                        </div>
+                        <div id="mobile-tech" class="panel-collapse collapse">
+                            <div class="list-group">
+                                <a class="list-group-item" href="/Courses/Courses/Details/300">Приложения за Windows</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/306">Мобилни приложения за Android</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/311">Приложения за iPhone и iPad</a>
+                                <a class="list-group-item" href="/Courses/Courses/Details/316">Мултиплатформени мобилни приложения с NativeScript</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!--TODO Icons-->
+            <section class="col-md-10">
+                <div id="courses-details-container">
+                    <div class="row text-center" id="courses-heading">
+                        <h1>Angular 2</h1>
+                    </div>
+                    <div id="courses-basic-info-container" class="row-eq-height">
+                        <p class="schedule">Срок за записване: 7 декември 2016</p>
+                        <p class="schedule">Дати на провеждане: от 5 декември 2016 г. до 4 януари 2017 г.</p>
+                        <p class="participants">Участници: 187 присъствено и 111 онлайн</p>
+                        <div class="course-info-content">Първата среща на "Училищната академия на Телерик" за сезон 2016/2017 ще се проведе на 21, 22 и 23
+                            октомври 2016 г. в зала Ultimate в нашия учебен център в София. Темата ще бъде "Въведение в TypeScript".
+                            По време на обучението ще направите първите си стъпки в програмирането и ще се запознаете с основите
+                            на програмния език TypeScript. Участието е безплатно, необходима е само предварителна регистрация.
+                            Програмата на обучението може да разгледате на нашия <a href="#" class="link">информационен уебсайт.</a></div>
+                    </div>
+
+                    <div class="row">
+                        <p class="important-note" data-toggle="collapse" data-target="#note-block">Важно</p>
+                        <div id="note-block" class="note-content collapse">
+                            За да получите бележка за присъствие на срещата на "Училищната академия на Телерик", е необходимо:<p> - да предадете попълнена
+                            от родител декларация (може да я свалите по-долу)</p><p> - да сте се регистрирали на четеца, намиращ
+                            се до входа на залата с картата с баркод, генерирана от нашата онлайн система в профила ви в
+                            началото и края на срещата</p><p> - да сте попълнили първото име и фамилията си в профила си в онлайн
+                            системата ни</p>
+                        </div>
+                    </div>
+                    <div class="row" id="buttons">
+                        <div id="course-signed-btn" class="col-md-3 display-none">
+                            <a class="btn btn-block"><span>ЗАПИСАН/А СТЕ</span><span>ПРИСЪСТВЕНО</span></a>
+                        </div>
+                        <div id="sign-course-btn" class="col-md-3">
+                            <a class="btn btn-block sign">ЗАПИШИ СЕ</a>
+                        </div>
+                        <div id="course-progam-btn" class="col-md-3 col-md-offset-6">
+                            <a class="btn btn-block">ПРОГРАМА</a>
+                        </div>
+
+                    </div>
+                    <div id="program-table" class="row">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-4"> Име на лекция
+                                    </th>
+                                    <th class="col-md-4"> Домашно
+                                    </th>
+                                    <th class="col-md-4"> Материали
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>1. Декларация</strong>
+                                    </td>
+                                    <td>
+                                        Лекцията няма домашно.
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <a href="/Courses/LectureResources/8728/Декларация" target="_blank">
+                                                <span class="glyphicon glyphicon-pencil text-warning"></span> Декларация
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>2. Представяне на Инициативата "Училищна академия на Телерик"</strong>
+                                    </td>
+
+                                    <td>
+                                        Лекцията няма домашно.
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <img class="table-icons" src="./images/presentation-icon-65130.png" alt="presentation">
+                                            <a href="/Courses/LectureResources/9085/Презентация" target="_blank">Презентация</a>
+
+                                        </div>
+                                        <div>
+                                            <img class="table-icons" src="./images/video-512.png" alt="video">
+                                            <a href="/Courses/LectureResources/9092/Видео" target="_blank">Видео
+                </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>3. TypeScript Overview</strong>
+                                    </td>
+
+                                    <td>
+                                        <p><a href="#">Изпратете домашно</a></p>
+                                        <p><a href="#">Условие на домашното</a></p>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <img class="table-icons" src="./images/video-512.png" alt="video">
+                                            <a href="/Courses/LectureResources/9096/Видео" target="_blank">Видео
+                </a>
+
+                                        </div>
+                                        <div>
+                                            <img class="table-icons" src="./images/presentation-icon-65130.png" alt="presentation">
+                                            <a href="/Courses/LectureResources/9097/Презентация" target="_blank">Презентация
+                </a>
+
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>4. Типове данни и променливи</strong>
+                                    </td>
+
+                                    <td>
+                                        Лекцията няма домашно.
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <img class="table-icons" src="./images/presentation-icon-65130.png" alt="presentation">
+                                            <a href="/Courses/LectureResources/9098/Презентация" target="_blank">Презентация
+                </a>
+
+                                        </div>
+                                        <div>
+                                            <img class="table-icons" src="./images/video-512.png" alt="video">
+                                            <a href="/Courses/LectureResources/9177/Видео" target="_blank">Видео
+                </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>5. Условни конструкции (if, if-else, switch-case)</strong>
+                                    </td>
+
+                                    <td>
+                                        Лекцията няма домашно.
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <img class="table-icons" src="./images/presentation-icon-65130.png" alt="presentation">
+                                            <a href="/Courses/LectureResources/9099/Презентация" target="_blank">Презентация
+                </a>
+
+                                        </div>
+                                        <div>
+                                            <img class="table-icons" src="./images/video-512.png" alt="video">
+                                            <a href="/Courses/LectureResources/9101/Видео" target="_blank">Видео
+                </a>
+
+                                        </div>
+                                        <div>
+                                            <img class="table-icons" src="./images/532.png" alt="demo">
+                                            <a href="/Courses/LectureResources/9100/Демо" target="_blank"> Демо
+                </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>6. Инструменти за разработка на TypeScript</strong>
+                                    </td>
+
+                                    <td>
+                                        Лекцията няма домашно.
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <img class="table-icons" src="./images/presentation-icon-65130.png" alt="presentation">
+                                            <a href="/Courses/LectureResources/9103/Презентация" target="_blank">Презентация
+                </a>
+
+                                        </div>
+                                        <div>
+                                            <img class="table-icons" src="./images/video-512.png" alt="video">
+                                            <a href="/Courses/LectureResources/9104/Видео-22-Октомври-2016-Иван-Колев" target="_blank"> Видео - 22 Октомври 2016 - Иван Колев
+                </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>7. Цикли</strong>
+                                    </td>
+
+                                    <td>
+                                        Лекцията няма домашно.
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <img class="table-icons" src="./images/presentation-icon-65130.png" alt="presentation">
+                                            <a href="/Courses/LectureResources/9105/Презентация" target="_blank">Презентация
+                </a>
+
+                                        </div>
+                                        <div>
+                                            <img class="table-icons" src="./images/video-512.png" alt="video">
+                                            <a href="/Courses/LectureResources/9106/Видео-22-Октомври-2016-Иван-Колев" target="_blank">Видео - 22 Октомври 2016 - Иван Колев
+                </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>8. Масиви</strong>
+                                    </td>
+
+                                    <td>
+                                        Лекцията няма домашно.
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <img class="table-icons" src="./images/presentation-icon-65130.png" alt="presentation">
+                                            <a href="/Courses/LectureResources/9107/Презентация" target="_blank">Презентация
+                </a>
+
+                                        </div>
+                                        <div>
+                                            <img class="table-icons" src="./images/video-512.png" alt="video">
+                                            <a href="/Courses/LectureResources/9113/Видео-23-октомври-2016-Дончо" target="_blank">Видео - 23 октомври 2016 - Дончо
+                </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>9. Функции в TypeScript</strong>
+                                    </td>
+
+                                    <td>
+                                        Лекцията няма домашно.
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <img class="table-icons" src="./images/presentation-icon-65130.png" alt="presentation">
+                                            <a href="/Courses/LectureResources/9108/Презентация" target="_blank">Презентация
+                </a>
+
+                                        </div>
+                                        <div>
+                                            <img class="table-icons" src="./images/video-512.png" alt="video">
+                                            <a href="/Courses/LectureResources/9112/Видео-23-октомври-2016-Дончо" target="_blank">Видео - 23 октомври 2016 - Дончо
+                </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>10. Как да предаваме домашни за курса</strong>
+                                    </td>
+
+                                    <td>
+                                        Лекцията няма домашно.
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <img class="table-icons" src="./images/video-512.png" alt="video">
+                                            <a href="/Courses/LectureResources/9184/Видео-Как-да-предаваме-домашни" target="_blank">Видео - Как да предаваме домашни
+                </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div id="license-image" class="col-md-3">
+                            <img src="./images/ShareAlike-License.png" alt="license">
+                        </div>
+                        <div id="sign-off-course-btn" class="col-md-3 col-lg-offset-6">
+                            <a href="#" class="btn btn-block display-none">ОТПИШИ СЕ ОТ КУРСА</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+<footer id="footer" class="footer panel-footer text-center">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-5">
+                <div>Всички права запазени © Telerik Academy 2012-2016</div>
+                <div><a href="/Home/About">Telerik Academy Learning System 5.7 (build 20160514.1dfa2d3)</a></div>
+                <div><a href="#">Правила и условия</a></div>
+            </div>
+            <div class="col-md-4">
+                <img src="./images/telerik-academy-logo-nav.png" alt="telerik-academy">
+            </div>
+            <div id="social-networks" class="col-md-3 text-right">
+                <ul>
+                    <li>
+                        <a href="http://www.facebook.com/TelerikAcademy" target="_blank"><img src="./images/square-facebook-512.png" alt="facebook-page"></a>
+                    </li>
+                    <li>
+                        <a href="http://www.youtube.com/user/TelerikAcademy" target="_blank"><img src="./images/youtube-square-social-media-512.png" alt="youtube-page"></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/#!/TelerikAcademy" target="_blank"><img src="./images/twitter-square-icon_321295.png" alt="twitter-page"></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/b/105769630299292709719/" target="_blank"><img src="./images/googleplus_512_custom_gloss_red.png" alt="googleplus-page"></a>
+                    </li>
+                    <li>
+                        <a href="/Rss/LatestCourses" target="_blank"><img src="./images/rssorange.png" alt="rss"></a>
+                    </li>
+                    <li>
+                        <a href="http://www.linkedin.com/groups?gid=3161033&amp;trk=hb_side_g" target="_blank"><img src="./images/square-linkedin-512.png" alt="linkedin-page"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+
+<script>
+                                $('#sign-course-btn a').click(() => {
+                                    $('#sign-off-course-btn a').toggleClass('display-none');
+                                    $('#sign-course-btn').toggleClass('display-none');
+                                    $('#course-signed-btn').toggleClass('display-none');
+                                });
+
+                                $('#sign-off-course-btn a').click(() => {
+                                    $('#sign-course-btn').toggleClass('display-none');
+                                    $('#sign-off-course-btn a').toggleClass('display-none');
+                                    $('#course-signed-btn').toggleClass('display-none');
+                                });
+</script>
+</body>
+
+</html>
